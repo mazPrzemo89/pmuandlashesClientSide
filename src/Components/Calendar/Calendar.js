@@ -318,12 +318,16 @@ const Calendar = () => {
             getBookingTimes(times).then(data => {
                 let counter = 0
                 let bookingsData = bookingValidationPrototype(duration, data, setDbTimes, new Date(year, month - 1, day), userRole)
-                setIsAllBooked(bookingsData.isBooked)
-                for (let i = 2; i < bookingsData.bookings.length - 2; i++) {
-                    if (bookingsData.bookings[i][0].display === 'flex') {
-                        counter++
+                if (bookingsData) {
+                    setIsAllBooked(bookingsData.isBooked)
+                    for (let i = 2; i < bookingsData.bookings.length - 2; i++) {
+                        if (bookingsData.bookings[i][0].display === 'flex') {
+                            counter++
+                        }
+                        setGridLength(counter)
                     }
-                    setGridLength(counter)
+                } else {
+                    alert('No timesheet! Please set a timesheet.')
                 }
             })
         }
