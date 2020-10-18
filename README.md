@@ -5,7 +5,7 @@ This scheduling application was written for a professional beautician. It's high
 
 ## Admin Dashboard
 
-Aftet following the steps included in pmuandlashesServerSide README file you shoud have an admin account set.
+After following the steps included in pmuandlashesServerSide README file you shoud have an admin account set.
 Loging in as admin will show you more options in the menu. The menu button is located in the upper left corner.
 Clicking on Dashboard will take you to the admin dashboard where you can create Categories, Products, Promotions and post certificates 
 as well as remove them. When your categories and products are ready you can move to Time Sheet page.
