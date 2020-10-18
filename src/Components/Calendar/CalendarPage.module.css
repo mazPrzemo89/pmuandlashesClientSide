@@ -1,0 +1,182 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 401px);
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
+.date {
+    margin-top: 200px;
+    height: 100px;
+    grid-row-start: 1;
+    grid-column-start: 2;
+}
+
+.calendar {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 80px;
+    display:grid;
+    grid-template-columns: repeat(7, 52px);
+    grid-column-start: 2;
+    grid-row-start: 1;
+    width:370px;
+    height:500px;
+    border-left: solid black 1px;
+    border-bottom: solid black 2px;
+    border-radius: 20px;
+    justify-items: center;
+    margin-bottom: 100px;
+    background-color: whitesmoke;
+}
+
+.day {
+   background-color: rgba(255, 255, 255, 0);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width:57px;
+}
+
+.dayName {
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:57px;
+    border-bottom:solid black 1px;
+    border-radius: 20px;
+ }
+
+.day:hover,
+.day1monday:hover, 
+.day1tuesday:hover,
+.day1wensday:hover,
+.day1thursday:hover,
+.day1friday:hover,
+.day1saturday:hover,
+.day1sunday:hover
+{
+    background-color: rgba(16, 219, 16, 0.397);
+    border-bottom:solid black 1px;
+    border-radius: 20px;
+}
+.day:disabled:hover,
+.day1monday:disabled:hover, 
+.day1tuesday:disabled:hover,
+.day1wensday:disabled:hover,
+.day1thursday:disabled:hover,
+.day1friday:disabled:hover,
+.day1saturday:disabled:hover,
+.day1sunday:disabled:hover{
+    background-color:transparent;
+    border-bottom:solid black 0px;
+    color: rgb(236, 187, 187);
+    cursor: not-allowed;
+    border-radius: 0px;
+}
+
+.day:active,
+.day1monday:active, 
+.day1tuesday:active,
+.day1wensday:active,
+.day1thursday:active,
+.day1friday:active,
+.day1saturday:active,
+.day1sunday:active {
+    background-color: #ADA8B6;
+    border-bottom:solid black 1px;
+    border-radius: 20px;
+}
+
+.day:disabled,
+.day1monday:disabled, 
+.day1tuesday:disabled,
+.day1wensday:disabled,
+.day1thursday:disabled,
+.day1friday:disabled,
+.day1saturday:disabled,
+.day1sunday:disabled {
+    color: rgba(246, 93, 106, 0.397);
+}
+
+.day:focus,
+.day1monday:focus, 
+.day1tuesday:focus,
+.day1wensday:focus,
+.day1thursday:focus,
+.day1friday:focus,
+.day1saturday:focus,
+.day1sunday:focus {
+    outline: none;
+    background-color: rgba(255, 255, 0, 0.335);
+    border-bottom:solid black 1px;
+    border-radius: 20px;
+}
+
+.day1monday, 
+.day1tuesday,
+.day1wensday,
+.day1thursday,
+.day1friday,
+.day1saturday,
+.day1sunday {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    width:57px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day1monday {
+    grid-column-start: 1;    
+}
+
+.day1tuesday {
+    grid-column-start: 2;    
+}
+
+.day1wensday {
+    grid-column-start: 3;    
+}
+
+.day1thursday {
+    grid-column-start: 4;    
+}
+
+.day1friday {
+    grid-column-start: 5;
+}
+
+.day1saturday {
+    grid-column-start: 6 
+}
+
+.day1sunday {
+    grid-column-start: 7;   
+}
+
+.buttonPlus {
+    width: 100px;
+    height: 30px;
+    background-color: blanchedalmond;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    margin-left: 50px;
+    
+}
+
+.buttonMinus {
+    width: 100px;
+    height: 30px;
+    background-color: blanchedalmond;
+    grid-row-start: 2;
+    grid-column-end: -3;
+}
+
+.times {
+    margin-top: 20px;
+}
+

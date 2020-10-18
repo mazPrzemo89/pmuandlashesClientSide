@@ -1,0 +1,152 @@
+.productMain {
+    height: 550px;
+    width: 300px;
+    margin-bottom: 2rem;
+}
+
+.product {
+    height: 500px;
+    width: 300px;
+    background-image: linear-gradient(pink, white);
+    border-radius: 5px;
+    display: inline-block;
+    z-index: 3;
+    padding-top: 0.3rem;
+}
+
+
+.photo {
+    display: flex;
+    text-align: center;
+    height: 200px;
+    margin:auto;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.photoCateg {
+    display: flex;
+    text-align: center;
+    height: 200px;
+    margin:auto;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    z-index: 0;
+    border-radius: 8px;
+    margin-bottom: 80px;
+    margin-top: 10px;
+}
+
+.photoText {
+    width:250px;
+    padding-top: 20px;
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    justify-content: center
+}
+
+.productButton { 
+    width:60%;
+    height: 45px;
+    margin-left: 15%;
+    border-color: black;
+    background-color: white;
+    font-size: large;
+    color:black;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+
+.productButton:hover {
+    cursor: pointer;
+}
+
+.link {
+    position: relative;
+    left:5%;  
+}
+
+.title{
+    margin-top: 21px;
+    text-align: center;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    
+}
+.titleDiv {
+    height: 96px;
+    vertical-align: middle;
+}
+.descDiv {
+    text-align: center;
+}
+
+.bottom {
+    width:75%;
+    height:2px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.418);
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+@media (max-width: 414px) {
+
+    .productMain {
+        height: 500px;
+        width: 300px;
+        margin-bottom: 2rem;
+    }
+
+    .product {
+        height: 500px;
+        background: radial-gradient(pink 3%, white);
+        border-radius: 25px;
+        margin-left: 0;
+        display: inline-block;
+    }
+
+
+    .productButton { 
+        width:60%;
+        height: 45px;
+        margin-left: 15%;
+        border-color: black;
+        background-color: white;
+        font-size: large;
+        color:black;
+        border-radius: 5px;
+        border: none;
+        text-align: center;
+    }
+     .photo {
+         margin: auto;
+
+     }
+
+     .bottom {
+        width:75%;
+        height:2px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.418);
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    
+
+     }
+
+     .productMain {
+         padding:auto
+     }
+}

@@ -1,0 +1,321 @@
+  .grid1 {
+    grid-template-rows: repeat(1, 50px);
+  }
+
+  .grid2 {
+    grid-template-rows: repeat(2, 50px);
+  }
+
+  .grid3 {
+    grid-template-rows: repeat(3, 50px);
+  }
+
+  .grid4 {
+    grid-template-rows: repeat(4, 50px);
+  }
+
+  .grid5 {
+    grid-template-rows: repeat(5, 50px);
+  }
+
+  .grid6 {
+    grid-template-rows: repeat(6, 50px);
+  }
+  
+  .hoursList {
+	list-style-type: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 5px;
+  grid-template-rows: repeat(6, 50px);
+  margin: 10px 0 0 0;
+  padding: 8px 0 8px 8px ;
+  justify-items: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  width:410px;
+  border-radius: 10px;
+  margin-left: -3px;
+  }
+  
+
+  .hoursList input:hover{
+    cursor: pointer;
+    border-radius: 5px;
+    background: rgb(248, 153, 169);
+  }
+  
+  .hoursList label,
+  .hoursList input {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height:100%;
+    width: 100%;
+    
+  }
+  
+  .hoursList input[type="radio"] {
+    opacity: 0.01;
+    z-index: 9;
+    width:100%;
+    height:100%
+
+  }
+  
+  .hoursList input[type="radio"]:checked+label,
+  .Checked+label {
+    border-radius: 5px;
+    background: rgb(248, 153, 169);
+  }
+  
+  .hoursList li {
+    margin: 0 0 0 0;
+    width: 60px;
+    height: 45px;
+    justify-content: center;
+    position: relative;
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 10px;
+  }
+
+
+  .hoursList label {
+    display: flex;
+    justify-content: center;
+    padding-left: 0px;
+    padding-top:13px;
+    border-radius: 0;
+    cursor: pointer;
+    z-index: 8;
+    height: 45px;
+    width: 60px;
+    margin-bottom: 20px;
+  }
+
+
+  .dayControllerOn {
+    z-index: 3;
+    height: 200px;
+    width:200px;
+  }
+
+  .dayControllerOff {
+    display: none;
+    z-index: -3;
+    height: 0;
+    width:0;
+  }
+
+  .container {
+    width: 100%;
+    margin-bottom: 0px;
+    background-image: linear-gradient(white,#ffc0cb 90%);
+  }
+
+ 
+
+  .calendarHeader h1 {
+    font-size: xx-large;
+  }
+
+  .calendarNav {
+    display: flex;
+    justify-content: center;
+    grid-row-start: 2;
+    grid-column-start: 3;
+    margin-bottom: -50px;
+  }
+
+  .calNavBtn {
+    width: 170px;
+    height: 30px;
+    border-radius: 6px;
+    font-size: large;
+    background-color: rgb(255, 234, 238)
+    
+  }
+
+  .calNavBtn:focus {
+    outline-color: purple;
+  }
+
+  .centeredButton {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    width: 375px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: large;
+    background-color:rgb(255, 234, 238);
+  }
+
+  .centeredButton:focus {
+    outline-color: purple;
+  }
+
+  .centerBtnDiv {
+    display: flex;
+    justify-content: center;
+  }
+
+  .calendarParagraph {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    padding-top:5px;
+    width: 350px;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 20px;
+    font-size: large;
+    border: 1px solid black;
+    background-color:#E3879E;
+    border-radius: 5px;
+  }
+
+  .formField {
+    width:100%;
+    margin-left: 0;
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  .formDiv {
+    display: flex;
+    margin-top: 0.5rem;
+  }
+
+  .bottomDiv {
+    text-align: center;
+    margin-bottom: 0px;
+    height:200px;
+    padding-bottom: 20px;
+  }
+
+  .adminControls {
+    text-align: center;
+    margin-bottom: 0px;
+    height:40px;
+    padding-bottom: 20px;
+  }
+
+
+  .userInput {
+    text-align: center;
+    margin-bottom: 0px;
+    height:80px;
+    padding-bottom: 20px;
+  }
+
+  .price {
+    font-size: large;
+    padding-top: 1rem;
+    border-bottom: 2px  solid; 
+    margin-top: 20px;
+  }
+
+  .notimes {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: xx-large;
+    margin-left:auto
+  }
+
+
+.priceDiv {
+  margin-top: 20px;
+}
+
+.calendarHeader {
+  margin-top: 70px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 2.2rem;
+  display: flex;
+  justify-content: center;
+  grid-row-start: 1;
+  grid-column-start: 2;
+  margin-bottom: 0px;
+}
+
+.bookingsDiv{
+  display:flex;
+  justify-content: center;
+}
+
+.treatmentSelect {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  padding-top:5px;
+  width: 350px;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom: 20px;
+  font-size: large;
+  border: 1px solid black;
+  background-color:rgb(223, 172, 214);
+  border-radius: 5px;
+}
+
+
+
+@media (max-width: 414px) {
+
+  .formDiv {
+    display: flex;
+    justify-items: center;
+    text-align: center;
+    margin:0;
+    }
+
+    .formField{
+      width:100%;
+      margin:auto
+    }
+
+    .hoursList {
+      width:380px;
+    }
+    .bookingsDiv{
+      display:flex
+    }
+}
+
+.linkDiv {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.7rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.linkDiv a{
+  color: black;
+  font-size: 1.5rem;
+}
+
+.formInput {
+  display: block;
+  width:13rem;
+  margin: auto;
+}
+
+.conditionsDiv{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.conditions {
+  margin-top: 40px;
+  width: 300px;
+  text-align: center;
+}

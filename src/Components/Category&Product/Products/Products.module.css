@@ -1,0 +1,40 @@
+html {
+    width:100%;
+    height:100%;
+}
+
+.products {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: rgba(64, 224, 208, 0);
+
+}
+
+@media (max-width: 414px) {
+    .products {
+        display: inline;
+        background-color: black;
+    }
+
+    .separator{
+        width:100%;
+        height: 60px;
+    }
+    
+}
+
+
+@media (max-width: 414px) and (min-width: 750px) {
+    .products {
+        display: block;
+        background-color: black;
+    }
+
+    .separator{
+        width:100%;
+        height: 60px;
+    }
+}
+
+

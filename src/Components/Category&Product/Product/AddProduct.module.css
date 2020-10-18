@@ -1,0 +1,57 @@
+#root {
+    height: 100%;
+}
+
+.addProduct {
+    margin-top: 100px;
+}
+
+.inputLabel{
+    display: block;
+}
+.inputField{
+    display: block;
+}
+
+.formAll {
+    width: 200px;
+    margin: auto
+}
+.wrappingDiv {
+    width: 100%;
+    display: flex;
+    
+}
+
+.dashLink {
+    width:200px;
+    margin:auto;
+    margin-top: 10px;
+}
+
+.title {
+    margin-top: 20px;
+    width:16rem;
+    height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: xx-large;
+    font-family: 'The Girl Next Door', cursive;
+}
+
+
+.successMessage {
+    font-size: 1.5rem;
+    color: green;
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.errorMessage {
+    font-size: 1.5rem;
+    color: red;
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}

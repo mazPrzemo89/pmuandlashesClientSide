@@ -1,0 +1,85 @@
+.promotionsTitle {
+    width:100%;
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'Courgette', cursive;
+    font-weight: 400;
+    color:red
+}
+
+.promotionsDiv{
+    width:40%;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Courgette', cursive;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    padding-top: 15px;
+    
+}
+
+.linkDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.linkDiv a{
+    text-align: center;
+    color: red;
+    font-size: 1.5rem;
+}
+
+@media (max-width:411px) {
+    .promotionsDiv{
+        width:90%;
+        text-align: center;
+        margin-top: 20px;
+        font-family: 'Courgette', cursive;
+        font-weight: 400;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding-bottom: 15px;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width:768px  ) and (min-width:411px){
+    .promotionsDiv{
+        width:70%;
+        text-align: center;
+        margin-top: 20px;
+        font-family: 'Courgette', cursive;
+        font-weight: 400;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding-bottom: 15px;
+        border-radius: 5px;
+    }
+}
+
+
+.promotionName {
+    margin-top:1px;
+    font-family: 'Courgette', cursive;
+    font-weight: 200;
+}
+
+.pusher {
+    height: 300px;
+    width:200px;
+    color:transparent
+}

@@ -1,0 +1,80 @@
+.footer {
+    width: 100%;
+    height: 170px;
+    display: flex;
+    background-image: linear-gradient(white, rgb(221, 202, 202)); /*#ffc0cb*/
+    justify-content: space-between;
+    z-index: 10;
+}
+
+@media (min-width: 769px) {
+    .footer{
+        bottom: 0
+    }
+    
+}
+
+.shareFB {
+    background-image: url('../About/facebook.png');
+    background-size: cover;
+    border: none;
+    height: 55px;
+    width: 55px;
+    margin-top: 25px;
+    margin-left: 12px;
+    outline:none;
+}
+
+.shareFB:hover {
+    cursor: pointer;
+}
+
+.shareInsta {
+    z-index: 10;
+    width:55px;
+    height: 55px;
+    list-style: none;
+    background-image: url('../About/instagram.png');
+    background-size: cover;
+    margin-top: 20px;
+    margin-left: 12px;
+}
+
+.shareButtons {
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    width: 80px;
+    height: 160px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 5px;
+}
+
+.contactP {
+    font-size: 1rem;
+    margin-top: 18px;
+    margin-bottom: 1px;
+    height: 33px;
+    font-family: 'Kumbh Sans', sans-serif;
+    width: 250px;
+}
+
+.contactDiv {
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 9px;
+    margin-right: 15px;
+}
+
+.contact {
+    display: flex;
+
+}

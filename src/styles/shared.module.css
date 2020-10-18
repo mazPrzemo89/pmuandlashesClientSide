@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+}
+
+.font {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+}
+.nav_bar_main {
+    width: 100%;
+    height: 71px;
+    display: flex;
+    background-image: linear-gradient(#ffc0cb, white);
+    position: fixed;
+    justify-content: space-between;
+    margin: 0;
+    top:0;
+    z-index: 10;
+    margin-bottom: 100px;
+}
+
+
+.gridCards {
+    display: grid;
+    width: 100%;
+    margin-top:100px;
+    grid-template-columns: repeat(1, 300px);
+    justify-content: space-evenly;    
+}
+
+.gridCardsProducts {
+    display: grid;
+    width: 100%;
+    margin-top:100px;
+    grid-template-columns: repeat(2, 350px);
+    justify-content: space-evenly;    
+}
+
+.logo_menu {
+    width: 165px;
+    height: 100px;
+    background-image: url('./images/logo_transparent_drawer.png');
+    z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    margin-top: -18px;
+}
+
+
+.home_button {
+    font-size: x-large;
+    z-index: 10;
+    width:90px;
+    height: 90px;
+    list-style: none;
+    background-image: url('../styles/images/domek.png');
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    margin-top: -9px;
+    margin-right: -18px;
+    margin-left: 0;
+}   
+
+.menu_button {
+    margin-top: -19px;
+    padding-top: 19px;
+    padding-left: 10px;
+    font-size: medium    ;
+    z-index: 10;
+    width:60px;
+    height: 71px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+
+
+.link {
+    padding: 0
+}
+
+.link p{
+    position: relative;
+    z-index: -20;
+   
+}
+
+.link a {
+    text-decoration: none;
+
+    width: 100%;
+    height: 100%;;
+}
+
+.link div {
+    text-align: center;
+    justify-content: center;
+    list-style: none;
+    
+}
+
+.para {
+    font-size: 1.5rem;
+    margin: none;
+}
+
+.bottom {
+    display: block;
+    height:2px;
+    width: 30%;
+    border-bottom: 1px  black solid;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo_side {
+    display: flex;
+    width: 200px;
+    height: 150px;
+    background-image: url('./images/logo_transparent_drawer.png');
+    z-index: 201;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    margin-top: -20px;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+@media (min-width: 769px)  {
+    
+    .gridCards {
+        display: grid;
+        width: 100%;
+        margin-top:150px;
+        grid-template-columns: repeat(3, 300px);
+        justify-content: space-evenly;    
+    }
+
+   
+}
+
+
+
+.menuAdmin {
+    height:1.2rem;
+}
+
+.promotionMessage {
+    margin-top: 130px;
+    margin-bottom: 10px;
+}
+
+.promotionTitle {
+    text-align: center;
+    font-family: 'Courgette', cursive;
+    color:red
+}
+
+.promotionLink {
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.promotionLink a {
+    color: red;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 414px)  {
+    .gridCardsProducts {
+        display: grid;
+        width: 100%;
+        margin-top:100px;
+        grid-template-columns: repeat(1, 350px);
+        justify-content: space-evenly;    
+    }
+
+    .promotionMessage {
+        margin-top: 100px;
+        margin-bottom: 10px;
+    }
+ }
+
+
+.share {
+    background-color: white;
+    background-image: url('../Components//Home/shareIcon.png');
+    background-size: cover;
+    z-index: 100;
+    position: fixed;
+    bottom:-4px;
+    right:-4px;
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 5px;
+}
+
+.shareButtons {
+    display: flex;
+    z-index: 100;
+    position: fixed;
+    bottom:-4px;
+    right:-4px;
+    width: 150px;
+    height: 84px;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.shareFB {
+    background-color: white;
+    background-image: url('../Components/About/facebook.png');
+    background-size: cover;
+    border: none;
+    height: 60px;
+    width: 60px;
+    margin-left: 10px;
+    margin-top: 12px;
+    outline:none;
+}
+
+.shareInsta {
+    z-index: 10;
+    width:60px;
+    height: 60px;
+    list-style: none;
+    background-image: url('../Components/About/instagram.png');
+    background-size: cover;
+    margin-top: 10px;
+    margin-left: 12px;
+}

@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost:3000/admin/test -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <link integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="./+_files/css2" rel="stylesheet">
+    <link href="./+_files/css2(1)" rel="stylesheet">
+    <link href="./+_files/css2(2)" rel="stylesheet">
+
+
+
+    <title>DagaLashes</title>
+  <style>.DrawerToggle_DrawerToggle__3KGl8 {
+    width: 35px;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.DrawerToggle_DrawerToggle__3KGl8 div {
+    width: 90%;
+    height: 1px;
+    background-color: black;
+}
+
+@media (min-width: 500px) {
+    /* .DrawerToggle div {
+        width: 90%;
+        height: 2px;
+        background-color: black;
+    } */
+}
+
+.DrawerToggle_line__1G0v8 {
+    height: 2px;
+}</style><style>.SideDrawer_SideDrawer___ApHf {
+    position: fixed;
+    width: 280px;
+    max-width: 70%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    background-color: white;
+
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+}
+
+/* @media (min-width: 500px) {
+    .SideDrawer {
+        display: none;
+    }
+} */
+
+.SideDrawer_Open__1stE4 {
+    transform: translateX(0);
+}
+
+.SideDrawer_Close__1I6d_ {
+    transform: translateX(-100%);
+}
+
+/* .Logo {
+    height: 11%;
+    margin-bottom: 32px;
+} */</style><style>
+@media (max-width: 414px)  { 
+    .Backdrop_Backdrop__hjUmF {
+        width: 414px;
+        height: 1000px;
+        position: fixed;
+        z-index: 20;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+}
+@media (min-width: 414px)  { 
+.Backdrop_Backdrop__hjUmF {
+    width: 414px;
+    position: fixed;
+    top:-1000;
+    left:-1000;
+    }
+}
+
+/* .Backdrop {
+    width: 414px;
+    height: 1000px;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+} */
+</style><style>* {
+    box-sizing: border-box;
+}
+
+.shared_font__gXeKd {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.shared_nav_bar_main__1JBuX {
+    width: 100%;
+    height: 71px;
+    display: flex;
+    background-image: linear-gradient(#ffc0cb, white);
+    position: fixed;
+    justify-content: space-between;
+    margin: 0;
+    top:0;
+    z-index: 10;
+    margin-bottom: 100px;
+}
+
+
+.shared_gridCards__1BJlW {
+    display: grid;
+    width: 100%;
+    margin-top:100px;
+    grid-template-columns: repeat(1, 300px);
+    justify-content: space-evenly;    
+}
+
+.shared_logo_menu__3-0xz {
+    width: 165px;
+    height: 120px;
+    background-image: url(/static/media/logo_transparent_drawer.50550190.png);
+    z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    margin-top: -22px;
+}
+
+
+.shared_home_button__10RaU {
+    font-size: x-large;
+    z-index: 10;
+    width:90px;
+    height: 90px;
+    list-style: none;
+    background-image: url(data:image/png;base64,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);
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    margin-top: -9px;
+    margin-right: -18px;
+}   
+
+.shared_menu_button__1wx9h {
+    margin-top: -19px;
+    padding-top: 19px;
+    padding-left: 10px;
+    font-size: medium    ;
+    z-index: 10;
+    width:60px;
+    height: 71px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+
+
+.shared_link__3CXlP {
+    padding: 0
+}
+
+.shared_link__3CXlP p{
+    position: relative;
+    z-index: -20;
+   
+}
+
+.shared_link__3CXlP a {
+    text-decoration: none;
+
+    width: 100%;
+    height: 100%;;
+}
+
+.shared_link__3CXlP div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    height:4rem;
+}
+
+.shared_para__1ii6W {
+    font-size: 1.5rem;
+}
+
+.shared_logo_side__Aaeon {
+    display: flex;
+    width: 200px;
+    height: 150px;
+    background-image: url(/static/media/logo_transparent_drawer.50550190.png);
+    z-index: 201;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    margin-top: -20px;
+    margin-left:27px;
+}
+
+@media (min-width: 768px)  {
+    
+    .shared_gridCards__1BJlW {
+        display: grid;
+        width: 100%;
+        margin-top:100px;
+        grid-template-columns: repeat(2, 300px);
+        justify-content: space-evenly;    
+    }
+   
+}</style><style>.Signin_signin__1QqSp {
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+}
+
+.Signin_form__3eztu {
+    text-align: center;
+}
+
+.Signin_formField__1_XJi {
+    width:6rem;
+    margin-left: 0;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.Signin_formDiv__3zwUq {
+    display: flex;
+    margin-left: 10%;
+    margin-top: 0.5rem;
+}</style><style>.Product_productMain__1C87L {
+    height: 550px;
+    width: 300px;
+    margin-bottom: 2rem;
+}
+
+.Product_product__1RWzL {
+    height: 500px;
+    width: 300px;
+    background-image: linear-gradient(pink, white);
+    border-radius: 5px;
+    display: inline-block;
+    z-index: 3;
+    padding-top: 0.3rem;
+}
+
+
+.Product_photo__2zpnO {
+    display: flex;
+    text-align: center;
+    height: 200px;
+    margin:auto;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    opacity: 0.7;
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.Product_photoCateg__4-5c4 {
+    display: flex;
+    text-align: center;
+    height: 200px;
+    margin:auto;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    opacity: 0.7;
+    z-index: 0;
+    border-radius: 8px;
+    margin-bottom: 80px;
+
+}
+
+.Product_photoText__1wsJI {
+    width:250px;
+    padding-top: 20px;
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    justify-content: center
+}
+
+.Product_productButton__sT4LA { 
+    width:60%;
+    height: 38px;
+    margin-left: 15%;
+    border-color: black;
+    background-color: white;
+    font-size: large;
+    color:black;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+
+.Product_productButton__sT4LA:hover {
+    cursor: pointer;
+}
+
+.Product_link__2fetI {
+    position: relative;
+    left:5%;
+    top: 80%
+    
+}
+
+.Product_title__26grh{
+    margin-top: 18px;
+    text-align: center;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.Product_descDiv__2-TEW {
+    text-align: center;
+}
+
+.Product_bottom__1uPRX {
+    width:75%;
+    height:2px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.418);
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+@media (max-width: 414px) {
+
+    .Product_productMain__1C87L {
+        height: 500px;
+        width: 300px;
+        margin-bottom: 2rem;
+    }
+
+    .Product_product__1RWzL {
+        height: 450px;
+        background: radial-gradient(pink 3%, white);
+        border-radius: 25px;
+        margin-left: 0;
+        display: inline-block;
+        margin-bottom: 40px;
+    }
+
+
+    .Product_productButton__sT4LA { 
+        width:60%;
+        height: 38px;
+        margin-left: 15%;
+        border-color: black;
+        background-color: white;
+        font-size: large;
+        color:black;
+        border-radius: 5px;
+        border: none;
+        text-align: center;
+    }
+     .Product_photo__2zpnO {
+         margin: auto;
+
+     }
+
+     .Product_bottom__1uPRX {
+        width:75%;
+        height:2px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.418);
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    
+
+     }
+
+     .Product_productMain__1C87L {
+         padding:auto
+     }
+}
+
+@media (max-width: 380px) {
+
+}</style><style>.adminDashboard_dayOn__3g3El {
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    color: #427AA1;
+    border: solid 2px #427AA1;   
+    border-radius: 10%;
+    margin-left: 40px;
+}
+
+.adminDashboard_dayOnActive__3VPt5 {
+    color: #064789;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    border: solid 3px #064789;   
+    border-radius: 10%;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+.adminDashboard_dayOff__1bz90 {
+   width: 100px;
+   padding: 5px;
+   text-align: center;
+   color: rgb(230, 137, 137);
+   border: solid 2px rgb(230, 137, 137);   
+   border-radius: 10%;
+   margin-left: 40px;
+}
+
+.adminDashboard_dayOffActive__2C-Oa {
+    color: red;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    border: solid 3px red;   
+    border-radius: 10%;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+.adminDashboard_grid__3b3qD {
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: repeat(12, 40px);
+}
+    
+.adminDashboard_adminLinksTitle__3My-b {
+    margin-top: 90px;
+    width:22rem;
+    height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: xx-large;
+    font-family: 'The Girl Next Door', cursive;
+}
+
+.adminDashboard_adminLinks__19Mmr {
+    margin-top: 0px;
+}
+
+.adminDashboard_adminLink__1cFVX {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    width:13rem;
+    height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+
+.adminDashboard_adminLink__1cFVX p {
+    border: 2px solid black;
+    height:100%;
+    padding-top: 2px;
+    color:black;
+    border-radius: 3px;
+    font-family: 'Michroma', sans-serif;
+}
+
+.adminDashboard_adminLink__1cFVX:hover {
+    cursor: pointer;
+}
+
+.adminDashboard_adminLink__1cFVX:active {
+    color: black
+}
+
+.adminDashboard_controlsLabel__1zJLa {
+    font-size: x-large;
+    width: 200px;
+    font-family: 'Michroma', sans-serif;
+}
+
+.adminDashboard_controlsSelect__3gWtD {
+    font-size: larger;
+    height: 35px;
+    width: 210px
+
+}
+
+.adminDashboard_controlsElement__2aJJG {
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.adminDashboard_controlsButton__3KS1U {
+    display: block;
+    width: 210px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 38px;
+}
+
+.adminDashboard_dayDiv__1Smyu {
+    width:100%
+}
+
+.adminDashboard_dayDiv__1Smyu h3 {
+    display: inline-block;
+    width:75px;
+    margin-left: 50px;
+}
+
+.adminDashboard_dayDiv__1Smyu button {
+    
+    display: inline-block;
+    height:28px;
+    width:100px;
+    margin-left:40px;
+    padding:0
+}
+
+/* .dayDivBtn {
+    display: block;
+    height:26px;
+    width:90px;
+    margin:0;
+    padding:0
+} */
+
+.adminDashboard_daysDiv__3Gjt7 {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(4, 150px);
+    height: 600px;
+    width:300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.adminDashboard_timesControls__1zZ8b {    
+    display: grid;
+    width: 360px;
+    grid-template-columns: 360px;
+    grid-template-rows:30px 30px auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.adminDashboard_daysDropdown__9MzZQ {
+    display: block;
+    width: 360px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.adminDashboard_dayControlls__3FbB3 {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.adminDashboard_daysTimes__3AuDY {
+    position: absolute;
+    bottom:-850px
+}
+
+
+
+</style><style>.Category_title__1SlMs {
+    /* font-family: 'Almarai', sans-serif; */
+    font-family: 'Dancing Script', cursive;
+    margin-top: 18px;
+    text-align: center;
+    color: black;
+}
+
+.Category_categoryButton__1_Bq6 {
+    width:130px;
+    height: 71px;
+    margin: 0;
+    border: 1px;
+    background-color: rgb(218, 185, 0);
+    font-size: 1.5rem;
+    margin-right: 1.5rem ;
+    font-family: 'Courier New', Courier, monospace;
+    border-bottom: 1px solid black;
+}
+
+.Category_catLink__1r4C8 {
+    color: black;
+    padding-top: 40px;
+    display: inline-block;
+    width:100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+.Category_addCategory__3Lmj8 {
+    margin-top: 100px;
+}
+
+.Category_photo__1RXgz {
+    display: flex;
+    text-align: center;
+    height: 200px;
+    margin:auto;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+    opacity: 0.7;
+    z-index: 0;
+    border-radius: 8px;
+    margin-bottom: 89px;
+}
+
+.Category_bottom__34prx {
+    width:64%;
+    margin-left: 17%;
+    height:2px;
+    display: block;
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+}
+
+@media (max-width: 414px) {
+
+    .Category_categoryButton__1_Bq6 {
+        width:100%;
+        height: 100px;
+        margin: 0;
+        border: 1px;
+        background-color: rgb(218, 185, 0);
+        font-size: 1.5rem;
+        margin-right: 1.5rem ;
+        font-family: 'Courier New', Courier, monospace;
+        border-bottom: 0.5px solid black;
+        border-top: 0.5px solid black;
+        border-right:1px solid black;
+      
+    }
+
+    .Category_categoryButtonDiv__1z0EH {
+        position: relative;
+        width:100%;
+        bottom: -10px
+    }
+
+}</style><style>.AddProduct_addProduct__1-yNP {
+    margin-top: 100px;
+}</style><style>.CalendarPage_grid__1UwS1 {
+    display: grid;
+    grid-template-columns: repeat(3, 401px);
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
+.CalendarPage_date__BOugg {
+    margin-top: 200px;
+    height: 100px;
+    grid-row-start: 1;
+    grid-column-start: 2;
+}
+
+.CalendarPage_calendar__176OJ {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 80px;
+    display:grid;
+    grid-template-columns: repeat(7, 52px);
+    grid-column-start: 2;
+    grid-row-start: 1;
+    width:370px;
+    height:500px;
+    border-left: solid black 1px;
+    border-bottom: solid black 2px;
+    border-radius: 20px;
+    justify-items: center;
+    margin-bottom: 100px;
+    background-color: whitesmoke;
+}
+
+.CalendarPage_day__12dpt {
+   background-color: rgba(255, 255, 255, 0);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width:57px;
+}
+
+.CalendarPage_dayName__1QkH8 {
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:57px;
+    border-bottom:solid black 1px;
+    border-radius: 20px;
+ }
+
+.CalendarPage_day__12dpt:hover,
+.CalendarPage_day1monday__1bZJr:hover, 
+.CalendarPage_day1tuesday__1aFaQ:hover,
+.CalendarPage_day1wensday__jK7lb:hover,
+.CalendarPage_day1thursday__3SkjI:hover,
+.CalendarPage_day1friday__pLvjA:hover,
+.CalendarPage_day1saturday__3FBhA:hover,
+.CalendarPage_day1sunday__3sobT:hover
+{
+    background-color: rgba(16, 219, 16, 0.397);
+    border-bottom:solid black 1px;
+    border-radius: 20px;
+}
+.CalendarPage_day__12dpt:disabled:hover,
+.CalendarPage_day1monday__1bZJr:disabled:hover, 
+.CalendarPage_day1tuesday__1aFaQ:disabled:hover,
+.CalendarPage_day1wensday__jK7lb:disabled:hover,
+.CalendarPage_day1thursday__3SkjI:disabled:hover,
+.CalendarPage_day1friday__pLvjA:disabled:hover,
+.CalendarPage_day1saturday__3FBhA:disabled:hover,
+.CalendarPage_day1sunday__3sobT:disabled:hover{
+    background-color:transparent;
+    border-bottom:solid black 0px;
+    color: rgb(236, 187, 187);
+    cursor: not-allowed;
+    border-radius: 0px;
+}
+
+.CalendarPage_day__12dpt:active,
+.CalendarPage_day1monday__1bZJr:active, 
+.CalendarPage_day1tuesday__1aFaQ:active,
+.CalendarPage_day1wensday__jK7lb:active,
+.CalendarPage_day1thursday__3SkjI:active,
+.CalendarPage_day1friday__pLvjA:active,
+.CalendarPage_day1saturday__3FBhA:active,
+.CalendarPage_day1sunday__3sobT:active {
+    background-color: #ADA8B6;
+    border-bottom:solid black 1px;
+    border-radius: 20px;
+}
+
+.CalendarPage_day__12dpt:disabled,
+.CalendarPage_day1monday__1bZJr:disabled, 
+.CalendarPage_day1tuesday__1aFaQ:disabled,
+.CalendarPage_day1wensday__jK7lb:disabled,
+.CalendarPage_day1thursday__3SkjI:disabled,
+.CalendarPage_day1friday__pLvjA:disabled,
+.CalendarPage_day1saturday__3FBhA:disabled,
+.CalendarPage_day1sunday__3sobT:disabled {
+    color: rgba(246, 93, 106, 0.397);
+}
+
+.CalendarPage_day__12dpt:focus,
+.CalendarPage_day1monday__1bZJr:focus, 
+.CalendarPage_day1tuesday__1aFaQ:focus,
+.CalendarPage_day1wensday__jK7lb:focus,
+.CalendarPage_day1thursday__3SkjI:focus,
+.CalendarPage_day1friday__pLvjA:focus,
+.CalendarPage_day1saturday__3FBhA:focus,
+.CalendarPage_day1sunday__3sobT:focus {
+    outline: none;
+    background-color: rgba(255, 255, 0, 0.335);
+    border-bottom:solid black 1px;
+    border-radius: 20px;
+}
+
+.CalendarPage_day1monday__1bZJr, 
+.CalendarPage_day1tuesday__1aFaQ,
+.CalendarPage_day1wensday__jK7lb,
+.CalendarPage_day1thursday__3SkjI,
+.CalendarPage_day1friday__pLvjA,
+.CalendarPage_day1saturday__3FBhA,
+.CalendarPage_day1sunday__3sobT {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    width:57px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CalendarPage_day1monday__1bZJr {
+    grid-column-start: 1;    
+}
+
+.CalendarPage_day1tuesday__1aFaQ {
+    grid-column-start: 2;    
+}
+
+.CalendarPage_day1wensday__jK7lb {
+    grid-column-start: 3;    
+}
+
+.CalendarPage_day1thursday__3SkjI {
+    grid-column-start: 4;    
+}
+
+.CalendarPage_day1friday__pLvjA {
+    grid-column-start: 5;
+}
+
+.CalendarPage_day1saturday__3FBhA {
+    grid-column-start: 6 
+}
+
+.CalendarPage_day1sunday__3sobT {
+    grid-column-start: 7;   
+}
+
+.CalendarPage_buttonPlus__1kQOX {
+    width: 100px;
+    height: 30px;
+    background-color: blanchedalmond;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    margin-left: 50px;
+    
+}
+
+.CalendarPage_buttonMinus__2QaiZ {
+    width: 100px;
+    height: 30px;
+    background-color: blanchedalmond;
+    grid-row-start: 2;
+    grid-column-end: -3;
+}
+
+.CalendarPage_times__4-s5v {
+    margin-top: 20px;
+}
+
+</style><style>  .Calendar_grid1__BBkqv {
+    grid-template-rows: repeat(1, 50px);
+  }
+
+  .Calendar_grid2__2op1Z {
+    grid-template-rows: repeat(2, 50px);
+  }
+
+  .Calendar_grid3__1IL4S {
+    grid-template-rows: repeat(3, 50px);
+  }
+
+  .Calendar_grid4__1nSct {
+    grid-template-rows: repeat(4, 50px);
+  }
+
+  .Calendar_grid5__157R8 {
+    grid-template-rows: repeat(5, 50px);
+  }
+
+  .Calendar_grid6__SkGNf {
+    grid-template-rows: repeat(6, 50px);
+  }
+  
+  .Calendar_donatenow__kYxKJ {
+	list-style-type: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 5px;
+  grid-template-rows: repeat(6, 50px);
+  margin: 10px 0 0 0;
+  padding: 8px 0 8px 8px ;
+  justify-items: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  width:90%;
+  border-radius: 10px;
+  }
+  
+
+  .Calendar_donatenow__kYxKJ input:hover{
+    cursor: pointer;
+    border-radius: 5px;
+    background: rgb(248, 153, 169);
+  }
+  
+  .Calendar_donatenow__kYxKJ label,
+  .Calendar_donatenow__kYxKJ input {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height:100%;
+    width: 100%;
+    
+  }
+  
+  .Calendar_donatenow__kYxKJ input[type="radio"] {
+    opacity: 0.01;
+    z-index: 9;
+    width:100%;
+    height:100%
+
+  }
+  
+  .Calendar_donatenow__kYxKJ input[type="radio"]:checked+label,
+  .Calendar_Checked__2lXVY+label {
+    border-radius: 5px;
+    background: rgb(248, 153, 169);
+  }
+  
+  .Calendar_donatenow__kYxKJ li {
+    margin: 0 13px 0 0;
+    width: 60px;
+    height: 45px;
+    justify-content: center;
+    position: relative;
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 10px;
+  }
+
+
+  .Calendar_donatenow__kYxKJ label {
+    display: flex;
+    justify-content: center;
+    padding: 1px;
+    padding-top:13px;
+    border-radius: 0;
+    cursor: pointer;
+    z-index: 8;
+    height: 45px;
+    width: 60px;
+    margin-bottom: 20px;
+  }
+
+
+  .Calendar_dayControllerOn__P3siB {
+    z-index: 3;
+    height: 200px;
+    width:200px;
+  }
+
+  .Calendar_dayControllerOff__H6OZu {
+    display: none;
+    z-index: -3;
+    height: 0;
+    width:0;
+  }
+
+  .Calendar_container__3EnbT {
+    width: 100%;
+    margin-bottom: 0px;
+    background-image: linear-gradient(white,#ffc0cb 90%);
+  }
+
+  .Calendar_calendarHeader__1EZSw {
+    display: flex;
+    justify-content: center;
+    grid-row-start: 1;
+    grid-column-start: 2;
+    margin-bottom: 0px;
+  }
+
+  .Calendar_calendarHeader__1EZSw h1 {
+    font-size: xx-large;
+  }
+
+  .Calendar_calendarNav__13R_l {
+    display: flex;
+    justify-content: center;
+    grid-row-start: 2;
+    grid-column-start: 3;
+    margin-bottom: -50px;
+  }
+
+  .Calendar_calNavBtn__3hnjF {
+    width: 150px;
+    height: 45px;
+    border-radius: 6px;
+    font-size: large;
+    
+  }
+
+  .Calendar_calNavBtn__3hnjF:focus {
+    outline-color: purple;
+  }
+
+  .Calendar_centeredButton__2Jfm0 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    width: 375px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: large;
+    background-color:rgb(255, 234, 238);
+  }
+
+  .Calendar_centeredButton__2Jfm0:focus {
+    outline-color: purple;
+  }
+
+  .Calendar_centerBtnDiv__cqSyA {
+    display: flex;
+    justify-content: center;
+  }
+
+  .Calendar_calendarParagraph__3s3AT {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    padding-top:5px;
+    width: 300px;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 20px;
+    font-size: large;
+    border: 1px solid black;
+    background-color:#E3879E;
+    border-radius: 5px;
+  }
+
+  .Calendar_formField__2j6mP {
+    width:6rem;
+    margin-left: 0;
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  .Calendar_formDiv__2pQC- {
+    display: flex;
+    margin-left: 10%;
+    margin-top: 0.5rem;
+  }
+
+  .Calendar_bottomDiv__2Bm5N {
+    text-align: center;
+    margin-bottom: 0px;
+    height:200px;
+    padding-bottom: 20px;
+  }
+
+  .Calendar_price__tWs_x {
+    font-size: large;
+    padding-top: 1rem;
+    border-bottom: 2px  solid; 
+  }
+
+  .Calendar_notimes__iqpqW {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: xx-large;
+    margin-left:auto
+  }
+
+
+.Calendar_priceDiv__3Ndz- {
+  margin-top: 20px;
+}
+
+@media (min-width: 414px) {
+  .Calendar_calendarHeader__1EZSw {
+    margin-top: 50px
+  }
+
+  .Calendar_formDiv__2pQC- {
+    display: flex;
+    justify-items: center;
+    text-align: center;
+    margin:0;
+    }
+
+    .Calendar_formField__2j6mP{
+      width:150px;
+      margin:auto
+    }
+
+    .Calendar_donatenow__kYxKJ {
+      width:400px
+    }
+}</style><style>html {
+    width:100%;
+    height:100%;
+}
+
+.Products_products__273Pv {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: rgba(64, 224, 208, 0);
+
+}
+
+@media (max-width: 414px) {
+    .Products_products__273Pv {
+        display: inline;
+        background-color: black;
+    }
+
+    .Products_separator__1BYms{
+        width:100%;
+        height: 60px;
+    }
+    
+}
+
+
+@media (max-width: 414px) and (min-width: 750px) {
+    .Products_products__273Pv {
+        display: block;
+        background-color: black;
+    }
+
+    .Products_separator__1BYms{
+        width:100%;
+        height: 60px;
+    }
+}
+
+
+</style></head>
+  <body style="margin: 0;">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="shared_nav_bar_main__1JBuX"><button class="shared_menu_button__1wx9h" to="/"><div class="DrawerToggle_DrawerToggle__3KGl8"><div></div><div></div><div></div></div></button><div class="shared_logo_menu__3-0xz"></div><a class="shared_home_button__10RaU" href="http://localhost:3000/" style="color: black;"></a></div><div class="SideDrawer_SideDrawer___ApHf SideDrawer_Close__1I6d_"><div><div><div class="shared_logo_side__Aaeon"></div><ul class="shared_link__3CXlP"><div><a href="http://localhost:3000/admin/dashboard" style="color: black;"><p class="shared_para__1ii6W">Dashboard</p></a></div><div><span style="cursor: pointer; color: black;"><p class="shared_para__1ii6W">Signout</p></span></div><div><a href="http://localhost:3000/calendar" style="color: black;"><p class="shared_para__1ii6W">Calendar</p></a></div><div><a href="http://localhost:3000/admin/bookings" style="color: black;"><p class="shared_para__1ii6W">Bookings</p></a></div></ul></div></div><nav></nav></div><div><div class="shared_gridCards__1BJlW"><div class="Product_productMain__1C87L"><div class="Product_product__1RWzL"><div class="Product_descDiv__2-TEW"></div><h2 class="Product_title__26grh">Lashes</h2><img class="Product_photoCateg__4-5c4" src="./+_files/5ef5108d7f0bcf40d947cadb"><a class="Product_link__2fetI" href="http://localhost:3000/Products"><button class="Product_productButton__sT4LA">Browse treatments</button></a></div><div class="Product_bottom__1uPRX"></div></div><div class="Product_productMain__1C87L"><div class="Product_product__1RWzL"><div class="Product_descDiv__2-TEW"></div><h2 class="Product_title__26grh">Brows</h2><img class="Product_photoCateg__4-5c4" src="./+_files/5ef511007f0bcf40d947cadd"><a class="Product_link__2fetI" href="http://localhost:3000/Products"><button class="Product_productButton__sT4LA">Browse treatments</button></a></div><div class="Product_bottom__1uPRX"></div></div><div class="Product_productMain__1C87L"><div class="Product_product__1RWzL"><div class="Product_descDiv__2-TEW"></div><h2 class="Product_title__26grh">Eyeliner</h2><img class="Product_photoCateg__4-5c4" src="./+_files/5ef5130f7f0bcf40d947cadf"><a class="Product_link__2fetI" href="http://localhost:3000/Products"><button class="Product_productButton__sT4LA">Browse treatments</button></a></div><div class="Product_bottom__1uPRX"></div></div><div class="Product_productMain__1C87L"><div class="Product_product__1RWzL"><div class="Product_descDiv__2-TEW"></div><h2 class="Product_title__26grh">Lips</h2><img class="Product_photoCateg__4-5c4" src="./+_files/5ef513647f0bcf40d947cae0"><a class="Product_link__2fetI" href="http://localhost:3000/Products"><button class="Product_productButton__sT4LA">Browse treatments</button></a></div><div class="Product_bottom__1uPRX"></div></div></div></div></div>
+
+  <script src="./+_files/bundle.js"></script><script src="./+_files/0.chunk.js"></script><script src="./+_files/main.chunk.js"></script><script src="./+_files/main.32b78ebd63a343c4f684.hot-update.js"></script>
+
+</body></html>

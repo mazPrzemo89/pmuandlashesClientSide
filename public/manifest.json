@@ -1,0 +1,25 @@
+{
+  "short_name": "pmuandlashstudio",
+  "name": "Permanent makeup and lashes extensions",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo.jpeg",
+      "type": "image/jpeg",
+      "sizes": "317x210"
+    },
+    {
+      "src": "logoLarge.jpeg",
+      "type": "image/jpeg",
+      "sizes": "1024x679"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,24 @@
+.contactDiv {
+    margin-top: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 7rem;
+  
+    
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.contactP {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 1px;
+}
+
+.sign {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top:30px
+}

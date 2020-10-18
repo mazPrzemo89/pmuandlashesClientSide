@@ -1,0 +1,308 @@
+.dayOn {
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    color: #427AA1;
+    border: solid 2px #427AA1;   
+    border-radius: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dayOnActive {
+    color: #064789;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    border: solid 3px #064789;   
+    border-radius: 10%;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dayOff {
+   width: 100px;
+   padding: 5px;
+   text-align: center;
+   color: rgb(230, 137, 137);
+   border: solid 2px rgb(230, 137, 137);   
+   border-radius: 10%;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.dayOffActive {
+    color: red;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    border: solid 3px red;   
+    border-radius: 10%;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: repeat(12, 40px);
+}
+    
+.adminLinksTitle {
+    margin-top: 90px;
+    width:22rem;
+    
+    margin-left: auto;
+    margin-right: auto;
+    font-size: xx-large;
+    font-family: 'The Girl Next Door', cursive;
+}
+
+.adminLinksTitleCert {
+    margin-top: 20px;
+    width:16rem;
+    height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: xx-large;
+    font-family: 'The Girl Next Door', cursive;
+}
+
+
+.adminLinks {
+    margin-top: 0px;
+}
+
+.adminLink {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    width:13rem;
+    height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+
+.adminLink p {
+    border: 2px solid black;
+    height:100%;
+    padding-top: 2px;
+    color:black;
+    border-radius: 3px;
+    font-family: 'Michroma', sans-serif;
+}
+
+.adminLink:hover {
+    cursor: pointer;
+}
+
+.adminLink:active {
+    color: black
+}
+
+.controlsLabel {
+    font-size: x-large;
+    width: 200px;
+    font-family: 'Michroma', sans-serif;
+}
+
+.controlsSelect {
+    font-size: 0.8rem;
+    height: 24px;
+    width: 252px;
+    margin-top:10px;
+}
+
+.controlsElement {
+    display: block;
+    width: 252px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.controlsButton {
+    display: block;
+    width: 252px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 24px;
+}
+
+.dayDiv {
+    width:100%
+}
+
+.dayDiv h3 {
+    display: block;
+    
+    text-align: center;
+}
+
+.dayDiv button {
+    
+    display: block;
+    height:28px;
+    width:100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding:0
+}
+
+/* .dayDivBtn {
+    display: block;
+    height:26px;
+    width:90px;
+    margin:0;
+    padding:0
+} */
+
+.daysDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(4, 150px);
+    height: 600px;
+    width:300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timesControls {    
+    display: grid;
+    width: 360px;
+    grid-template-columns: 360px;
+    grid-template-rows:30px 30px auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.daysDropdown {
+    display: block;
+    width: 360px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dayControlls {
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 6rem;
+}
+
+.daysTimes {
+    position: absolute;
+    bottom:-850px
+}
+
+.formDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.formInput {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+
+.categoryName {
+    font-size: 1.1rem;
+    text-align: center;
+    font-family: 'Michroma', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.submitBtn {
+    height: 24px;
+    margin: auto;
+    width: 252px
+}
+
+.promParagraph {
+    font-family: 'Michroma', sans-serif;
+    margin-bottom: 1px;
+    margin-top:40px;
+    font-size: large;
+    text-align: center;
+    width: 252px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea {
+    width: 252px;
+}
+
+.dashboardInput {
+width: 252px;
+ }
+
+ form button {
+    width: 252px;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .successMessage {
+    font-size: 1.5rem;
+    color: green;
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.errorMessage {
+    font-size: 1.5rem;
+    color: red;
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.updateDiv {
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+
+.updateDiv button {
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.updateDiv input {
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+    width: 252px;
+}
+
+.updateDiv textarea {
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+    width: 252px;
+}
+
+.updateParagraph {
+    text-align: center;
+    margin-bottom: 2px
+}
+
+.updateTitle {
+    height: 30px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 2px
+}
