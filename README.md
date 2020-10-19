@@ -1,7 +1,7 @@
 # pmuandlashesClientSide
 This scheduling application was written for a professional beautician. It's highly personalised, as it gives the admin full flexibility in creating categories, services and setting up their own working schedule. The working schedule allows the admin to adjust their full availability, by selecting days of the week they want to work, hours, default for every day or custom for any given day if necessary. Holidays and breaks are also a feature included in this app.
 
-# Components
+# Containers and Components
 
 ## Admin Dashboard
 
@@ -22,7 +22,20 @@ Clicking on Browse treatments button will take you to Products page for the spec
 
 ## Products page
 
-Products page is also generating a list of Products from an array fetched from the database. Components are populated with data such as title, image, description, price. Clicking on Book appointments will take you to the Calendar page where the bookig happens.
+Products page is also generating a list of Products from an array fetched from the database. Components are populated with data such as title, image, description, price. Clicking on Book appointments button will take you to the Calendar page where the bookig happens.
 
 ## Calendar page
 
+On the calendar page you are able to book your desired appointment from current date to three months ahead. You can choose from days and times previously set by the admin. To successfully book an appoinment you will have to pay deposit and provide a valid UK phone number to which a confirmation SMS message will be sent as well as a reminder one day before your appointment. Booked and overlaping hours will not be displayed in the UI, however admin user will be able to see all the booking times, booked are displayed in red, breaks in green. Admin can also book appointments form the calendar page without a need to pay a deposit.
+
+## Bookings page
+
+Bookings page is only available to the admin. All the bookings will be displayed there as buttons with their corresponding date clicking on that button will display the actual bookings list with customer name, phone number, time, treatment and cancel button. Clicking on cancel button will trigger a confirmation prompt.
+
+## About page
+
+About page is purley presentational the admin can write a few words about themselves and post their picture.
+
+## Qualification page
+
+Qualification page is intended to display cerfificates previously posted by the admin. Certificates can be posted from the Admin dashboard. 
