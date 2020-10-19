@@ -39,3 +39,67 @@ About page is purely representational the admin can write a few words about them
 ## Qualification page
 
 Qualification page is intended to display cerfificates previously posted by the admin. Certificates can be posted from the Admin dashboard. 
+
+
+# Deployment
+
+Before creating a production build you will have to adjust the API's so the server can serve the files from build directory correctly.
+You can find them in ``` src/APIs ``` and ``` src/auth ``` directories.
+You will have to remove the appended ``` ${API} ``` variable form the path in every fetch call. See the example below.
+
+### Development
+
+```
+export const signup = user => {
+
+    return fetch(`${API}/signup`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(user)
+    })
+        .then(response => {
+            return response.json()
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+
+```
+
+### Production
+
+```
+
+export const signup = user => {
+
+    return fetch(`/signup`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(user)
+    })
+        .then(response => {
+            return response.json()
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+
+```
+The API variable import is not needed in production build it sits at the top of every file containig API's
+
+``` import { API } from '../config'  ``` 
+
+You can delete in form the config file aswell.
+
+Now you can run ``` npm run build ``` command.
+Place the newly created build folder in the servers root directory.
+
+
