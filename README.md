@@ -15,3 +15,14 @@ as well as remove them. When your categories and products are ready you can move
 On the time sheet page you will see a set button for each day of the week "ON" or "OFF" will be highlighted depending on what you choose.
 Under that section you can Delete working times sheet or Create a new one. Default option in "Set working hours timesheet" will apply to every working day unless you create a custom one.
 
+## Home page
+
+Home page displays previously created categories as React Components by looping over components array fetched from the database via REST API.
+Clicking on Browse treatments button will take you to Products page for the specified category.
+
+## Products page
+
+Products page is also generating a list of Products from an array fetched from the database. Components are populated with data such as title, image, description, price. Clicking on Book appointments will take you to the Calendar page where the bookig happens.
+
+## Calendar page
+
