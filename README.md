@@ -5,8 +5,8 @@ This scheduling application was written for a professional beautician. It's high
 
 ## Admin Dashboard
 
-After following the steps included in pmuandlashesServerSide README file you shoud have an admin account set.
-Loging in as admin will show you more options in the menu. The menu button is located in the upper left corner.
+After following the steps included in pmuandlashesServerSide README file you should have an admin account set.
+Logging in as admin will show you more options in the menu. The menu button is located in the upper left corner.
 Clicking on Dashboard will take you to the admin dashboard where you can create Categories, Products, Promotions and post certificates 
 as well as remove them. When your categories and products are ready you can move to Time Sheet page.
 
@@ -22,11 +22,11 @@ Clicking on Browse treatments button will take you to Products page for the spec
 
 ## Products page
 
-Products page is also generating a list of Products from an array fetched from the database. Components are populated with data such as title, image, description, price. Clicking on Book appointments button will take you to the Calendar page where the bookig happens.
+Products page is also generating a list of Products from an array fetched from the database. Components are populated with data such as title, image, description, price. Clicking on Book appointments button will take you to the Calendar page where the booking happens.
 
 ## Calendar page
 
-On the calendar page you are able to book your desired appointment from current date to three months ahead. You can choose from days and times previously set by the admin. To successfully book an appoinment you will have to pay deposit and provide a valid UK phone number to which a confirmation SMS message will be sent as well as a reminder one day before your appointment. Booked and overlaping hours will not be displayed in the UI, however admin user will be able to see all the booking times, booked are displayed in red, breaks in green. Admin can also book appointments form the calendar page without a need to pay a deposit.
+On the calendar page you are able to book your desired appointment from current date to three months ahead. You can choose from days and times previously set by the admin. To successfully book an appoinment you will have to pay deposit and provide a valid UK phone number to which a confirmation SMS message will be sent as well as a reminder one day before your appointment. Booked and overlapping  hours will not be displayed in the UI, however admin user will be able to see all the booking times, booked are displayed in red, breaks in green. Admin can also book appointments form the calendar page without a need to pay a deposit.
 
 ## Bookings page
 
@@ -34,7 +34,7 @@ Bookings page is only available to the admin. All the bookings will be displayed
 
 ## About page
 
-About page is purley presentational the admin can write a few words about themselves and post their picture.
+About page is purely representational the admin can write a few words about themselves and post their picture.
 
 ## Qualification page
 
