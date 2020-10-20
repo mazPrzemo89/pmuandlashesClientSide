@@ -22,26 +22,26 @@ import Success from './Components/Success/Success'
 
 const Routes = () => {
     return (
-    <BrowserRouter>
-        <Switch>
-            <Route path="/" exact component={Home}/>
-            <Route path="/about" exact component={About}/>
-            <Route path="/testimonial" exact component={Testimonial}/>
-            <Route path="/promotions" exact component={Promotions}/>
-            <Route path="/times" exact component={TimeSheet}/>
-            <Route path="/signin" exact component={Signin}/>
-            <Route path="/signup" exact component={Signup}/>
-            <Route path="/calendar" exact component={Calendar}/>
-            <Route path="/products" exact component={Products}/>
-            <Route path="/success" exact component={Success}/>
-            <PrivateRoute path="/user/dashboard" exact component={Dashboard}/>
-            <AdminRoute path="/admin/bookings" exact component={ManageBookings}/>
-            <AdminRoute path="/admin/dashboard" exact component={AdminDashboard}/>
-            <AdminRoute path="/create/category" exact component={AddCategory}/>
-            <AdminRoute path="/create/product" exact component={AddProduct}/>
-            <Route path="/*" component={Home}/>
-        </Switch>
-    </BrowserRouter>
+        <BrowserRouter>
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/about" exact component={About} />
+                <Route path="/testimonial" exact component={Testimonial} />
+                <Route path="/promotions" exact component={Promotions} />
+                <Route path="/signin" exact component={Signin} />
+                <Route path="/signup" exact component={Signup} />
+                <Route path="/calendar" exact component={Calendar} />
+                <Route path="/products" exact component={Products} />
+                <Route path="/success" exact component={Success} />
+                <PrivateRoute path="/user/dashboard" exact component={Dashboard} />
+                <AdminRoute path="/times" exact component={TimeSheet} />
+                <AdminRoute path="/admin/bookings" exact component={ManageBookings} />
+                <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
+                <AdminRoute path="/create/category" exact component={AddCategory} />
+                <AdminRoute path="/create/product" exact component={AddProduct} />
+                <Route path="/*" component={Home} />
+            </Switch>
+        </BrowserRouter>
     )
 }
 

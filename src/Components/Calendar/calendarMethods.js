@@ -16,7 +16,7 @@ exports.bookingValidationPrototype = (duration, data, callback, date, role) => {
 
 
         if (role === 0) {
-            for (let i = 2; i < bookingsChecked.length - 2; i++) {
+            for (let i = 0; i < bookingsChecked.length; i++) {
 
                 if (bookingsChecked[i][0].isNotBooked === true && bookingsChecked[i][0].time !== "") {
                     bookingsChecked[i][0].display = 'flex'
@@ -40,7 +40,7 @@ exports.bookingValidationPrototype = (duration, data, callback, date, role) => {
 
             }
 
-            for (let i = 2; i < bookingsChecked.length - 2; i++) {
+            for (let i = 0; i < bookingsChecked.length; i++) {
 
                 if (bookingsChecked[i][0].isNotBooked === false) {
                     for (let j = 0; j < bookingsChecked[i][0].duration; j++) {
@@ -51,7 +51,7 @@ exports.bookingValidationPrototype = (duration, data, callback, date, role) => {
 
             }
 
-            for (let i = 2; i < bookingsChecked.length - 2; i++) {
+            for (let i = 0; i < bookingsChecked.length; i++) {
 
                 if (bookingsChecked[i][0].isNotBooked === false) {
 
@@ -61,7 +61,7 @@ exports.bookingValidationPrototype = (duration, data, callback, date, role) => {
 
             }
 
-            for (let i = 2; i < bookingsChecked.length - 2; i++) {
+            for (let i = 0; i < bookingsChecked.length; i++) {
 
                 if (i + duration >= bookingsChecked.length) {
                     break
@@ -74,7 +74,7 @@ exports.bookingValidationPrototype = (duration, data, callback, date, role) => {
 
             }
 
-            for (let i = 2; i < bookingsChecked.length - 2; i++) {
+            for (let i = 0; i < bookingsChecked.length; i++) {
 
                 if (bookingsChecked[i][0].isNotBooked === false) {
                     bookingsChecked[i][0].display = 'none'
@@ -83,12 +83,12 @@ exports.bookingValidationPrototype = (duration, data, callback, date, role) => {
 
             }
 
-            for (let i = duration + 2; i > 0; i--) {
+            for (let i = duration; i > 0; i--) {
                 bookingsChecked[bookingsChecked.length - i][0].display = 'none'
             }
 
             if (currentTimeCompare === bookedTimeCompare) {
-                for (let i = 2; i < bookingsChecked.length - 2; i++) {
+                for (let i = 0; i < bookingsChecked.length; i++) {
                     if (bookingsChecked[i][0].time < currentTimeString) {
                         bookingsChecked[i][0].display = 'none'
                         bookingsChecked[i][0].color = 'black'
@@ -99,7 +99,7 @@ exports.bookingValidationPrototype = (duration, data, callback, date, role) => {
 
         if (role === 1) {
 
-            for (let i = 2; i < bookingsChecked.length - 2; i++) {
+            for (let i = 0; i < bookingsChecked.length; i++) {
 
                 if (bookingsChecked[i][0].isNotBooked === false) {
                     for (let j = 0; j < bookingsChecked[i][0].duration; j++) {
@@ -123,7 +123,7 @@ exports.bookingValidationPrototype = (duration, data, callback, date, role) => {
 
 
         let isAllBooked = true
-        for (let i = 2; i < bookingsChecked.length - 2; i++) {
+        for (let i = 0; i < bookingsChecked.length; i++) {
             if (bookingsChecked[i][0].display !== 'none') {
                 isAllBooked = false
             }
