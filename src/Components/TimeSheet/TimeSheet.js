@@ -29,10 +29,6 @@ const TimeSheet = () => {
         sunday: true
     })
 
-    const [bookTimes, setBookTimes] = useState({
-        bookings: null
-    })
-
 
     useEffect(() => {
         getWorkingDays().then((data, err) => {
@@ -52,27 +48,13 @@ const TimeSheet = () => {
         })
     }, [])
 
-
-    // const fetchTimes = () => {
-    //     getBookingTimesDefault().then((data, err) => {
-    //         if (err) {
-    //             console.log(err)
-    //         } else if (data.error) {
-    //             alert('Please initialize working times array.')
-    //             return
-    //         } else {
-    //             setBookTimes({ bookings: data })
-    //         }
-    //     })
-    // }
-
     const setTimes = () => {
         let data = hours(startingTime, endTime)
         let body = {
             bookings: data,
             day: dayOfWeek
         }
-        //console.log(hours(startingTime, endTime))
+
         setBookingTimesDefault(user._id, token, body).then(() => { setDayOfWeek('default'); window.location.reload() })
 
     }
@@ -249,34 +231,12 @@ const TimeSheet = () => {
                 <div className={styles.timesControls}>
                     {hoursDropdown(getStartingTime, 'select starting time')}
                     {hoursDropdown(getEndTime, 'select end time')}
-                    {/* <button onClick={fetchTimes} disabled={dayOfWeek ? false : true}>Show working hours</button> */}
-                    <button onClick={() => { setTimes() }}>Save working hours</button>
+                    <button onClick={setTimes}>Save working hours</button>
                     <button onClick={() => { console.log(startingTime, endTime) }}>Log times</button>
-                    {/* <div className={styles.grid}>
-                        {bookTimes.bookings && bookTimes.bookings.map((e, i) => {
-                            return (
-                                <div key={i}>
-                                    <input
-                                        type="checkbox"
-                                        id={e[0].position}
-                                        name={`${e[0].time}`}
-                                        value={`${e[0].time}`}
-                                        onClick={(e) => submitForm(e)}
-                                    />
-                                    <label> {`${e[0].time}`}</label>
-                                </div>
-                            )
-                        })
-                        }
-                    </div> */}
                 </div>
             </AUX>
         )
     }
-
-
-
-
     return (
         <AUX>
             <Menu />

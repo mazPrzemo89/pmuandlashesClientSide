@@ -59,16 +59,6 @@ const Calendar = () => {
     const [dbTimes, setDbTimes] = useState([])
     const [radioButton, setRadioButton] = useState('')
 
-    const [data, setData] = useState({
-        loading: false,
-        success: false,
-        clientToken: null,
-        error: '',
-        instance: {},
-        address: ''
-    });
-
-
     useEffect(() => {
 
         if (auth) {
