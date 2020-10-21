@@ -9,7 +9,7 @@ import stylesMain from './Calendar.module.css'
 import { isAuthenticated } from '../../auth'
 import { getProductPrice, getProducts } from '../../APIs/productsApi'
 import { setDbMonth } from '../../APIs/calendarApi'
-import { bookingValidationPrototype, dbDateHandler, updateMonth } from './calendarMethods'
+import { bookingValidation, dbDateHandler, updateMonth } from './calendarMethods'
 import { getBookingTimes, bookAppointment } from '../../APIs/bookingApi'
 import { getBookingTimesCustom, setHoliday } from '../../APIs/adminApi'
 import { sendSMS, scheduleSMS } from '../../APIs/smsApi'
@@ -255,7 +255,7 @@ const Calendar = () => {
         times.bookings = timesToBook[n].bookings.length === 0 ? timesToBook[7].bookings : timesToBook[n].bookings
         times.name = `${year}_${month}_${day.toString().length === 2 ? day : '0' + day}`
         getBookingTimes(times).then((timesData) => {
-            let bookingsToVal = bookingValidationPrototype(duration, timesData, setDbTimes, new Date(year, month - 1, day), userRole)
+            let bookingsToVal = bookingValidation(duration, timesData, setDbTimes, new Date(year, month - 1, day), userRole)
 
             for (let i = 0; i < bookingsToVal.bookings.length; i++) {
                 if (bookingsToVal.bookings[i][0].time === radioButton && bookingsToVal.bookings[i][0].display === 'flex') {
@@ -307,17 +307,15 @@ const Calendar = () => {
 
             getBookingTimes(times).then(data => {
                 let counter = 0
-                let bookingsData = bookingValidationPrototype(duration, data, setDbTimes, new Date(year, month - 1, day), userRole)
+                let bookingsData = bookingValidation(duration, data, setDbTimes, new Date(year, month - 1, day), userRole)
                 if (bookingsData) {
                     setIsAllBooked(bookingsData.isBooked)
-                    for (let i = 2; i < bookingsData.bookings.length - 2; i++) {
-                        if (bookingsData.bookings[i][0].display === 'flex') {
+                    for (let i = 0; i < bookingsData.bookings.length; i++) {
+                        if (bookingsData.bookings[i].display === 'flex') {
                             counter++
                         }
                         setGridLength(counter)
                     }
-                } else {
-                    alert('No timesheet! Please set a timesheet.')
                 }
             })
         }
@@ -406,7 +404,7 @@ const Calendar = () => {
                 <div className={stylesCalPage.dayName}>sun</div>
                 {calData && calData.map((e, i) => {
                     return (
-                        <button onClick={() => { setDbTimes([]); setDay(e.value) }} key={i} className={e.style} style={{}} disabled={userRole === 1 ? false : (e.value < new Date().getDate() && (month <= new Date().getMonth() + 1) ? true : (userRole === 1 && e.holiday === true ? false : e.disabled))} style={userRole === 1 && e.holiday === true ? { color: 'red' } : {}} >{e.value}</button>
+                        <button onClick={() => { setDbTimes([]); setDay(e.value) }} key={i} className={e.style} disabled={userRole === 1 ? false : (e.value < new Date().getDate() && (month <= new Date().getMonth() + 1) ? true : (userRole === 1 && e.holiday === true ? false : e.disabled))} style={userRole === 1 && e.holiday === true ? { color: 'red' } : {}} >{e.value}</button>
                     )
                 })}
             </div>
@@ -443,18 +441,18 @@ const Calendar = () => {
                 <ul className={dbTimes.length === 0 ? '' : stylesMain.hoursList} style={{ height: gridLength >= 6 ? '320px' : `${gridLength * 65}px`, marginTop: '0.2rem' }}>
 
                     {dbTimes && dbTimes.map((arr, i) => {
-                        if (arr[0].time !== "") {
+                        if (arr.time !== "") {
                             return (
-                                <li key={i + 'li'} style={{ display: arr[0].display }}>
+                                <li key={i + 'li'} style={{ display: arr.display }}>
                                     <input
                                         type="radio"
                                         name="booking time"
                                         key={i}
                                         id={i}
-                                        value={arr[0].time}
-                                        onClick={() => setRadioButton(`${arr[0].time}`)}
+                                        value={arr.time}
+                                        onClick={() => setRadioButton(`${arr.time}`)}
                                     />
-                                    <label key={i + 'l'} style={{ display: arr[0].display, color: arr[0].color }}>{arr[0].time} </label>
+                                    <label key={i + 'l'} style={{ display: arr.display, color: arr.color }}>{arr.time} </label>
                                 </li>
                             )
                         } else {
