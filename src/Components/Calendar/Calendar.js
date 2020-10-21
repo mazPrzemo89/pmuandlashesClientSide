@@ -120,6 +120,7 @@ const Calendar = () => {
         })
         setTimesToBook({ ...timesToBook, name: `${year}_${month}_${day.toString().length === 2 ? day : '0' + day}` })
         updateMonth(month, year, setDbMonth, assignClass, setCalData, setError)
+        console.log(timesToBook)
     }, [])
 
 
@@ -146,7 +147,13 @@ const Calendar = () => {
                     break;
                 case 6:
                     array[i].style = stylesCalPage.day1saturday;
+                    break;
+                default:
+
             }
+
+
+
         }
     }
 
@@ -254,6 +261,7 @@ const Calendar = () => {
 
         times.bookings = timesToBook[n].bookings.length === 0 ? timesToBook[7].bookings : timesToBook[n].bookings
         times.name = `${year}_${month}_${day.toString().length === 2 ? day : '0' + day}`
+
         getBookingTimes(times).then((timesData) => {
             let bookingsToVal = bookingValidation(duration, timesData, setDbTimes, new Date(year, month - 1, day), userRole)
 
@@ -304,7 +312,7 @@ const Calendar = () => {
             const n = d.getDay();
             times.bookings = timesToBook[n].bookings.length === 0 ? timesToBook[7].bookings : timesToBook[n].bookings
             times.name = `${year}_${month}_${day.toString().length === 2 ? day : '0' + day}`
-
+            console.log(times)
             getBookingTimes(times).then(data => {
                 let counter = 0
                 let bookingsData = bookingValidation(duration, data, setDbTimes, new Date(year, month - 1, day), userRole)
@@ -334,7 +342,7 @@ const Calendar = () => {
         }
 
         for (let i = 0; i < dbTimes.length; i++) {
-            body.bookings.push(dbTimes[i][0])
+            body.bookings.push(dbTimes[i])
         }
         body.name = `${year}_${month}_${day.toString().length === 2 ? day : '0' + day}`
         for (let i = 0; i < body.bookings.length; i++) {
@@ -415,7 +423,7 @@ const Calendar = () => {
 
         return (
             <div className={stylesMain.centerBtnDiv} >
-                {calData.length > 0 && <button className={stylesMain.centeredButton} onClick={() => { checkBookings(); }} disabled={calData[day - 1].disabled === true ? true : false}>Check availability</button>}
+                {calData.length > 0 && <button className={stylesMain.centeredButton} onClick={() => { checkBookings(); console.log(timesToBook) }} disabled={calData[day - 1].disabled === true ? true : false}>Check availability</button>}
             </div>
         )
     }

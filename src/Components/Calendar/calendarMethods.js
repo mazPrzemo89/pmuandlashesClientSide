@@ -45,7 +45,7 @@ exports.bookingValidation = (duration, data, callback, date, role) => {
 
             for (let i = 0; i < bookingsChecked.length; i++) {
 
-                if (bookingsChecked[i][0].isNotBooked === false) {
+                if (bookingsChecked[i].isNotBooked === false) {
                     for (let j = 0; j < bookingsChecked[i].duration; j++) {
                         bookingsChecked[i + j].display = 'none'
                         bookingsChecked[i].color = 'black'
@@ -70,7 +70,7 @@ exports.bookingValidation = (duration, data, callback, date, role) => {
                     break
                 }
 
-                if (bookingsChecked[i].display === "flex" && bookingsChecked[i + duration][0].time === '--') {
+                if (bookingsChecked[i].display === "flex" && bookingsChecked[i + duration].time === '--') {
                     bookingsChecked[i].display = 'none'
                     bookingsChecked[i].color = 'black'
                 }
