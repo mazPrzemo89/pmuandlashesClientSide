@@ -45,18 +45,7 @@ const Calendar = () => {
 
 
     // An array to be filled by getBookingTimesCustom API call
-    const [workingTimes, setTimesToBook] = useState([
-        { bookings: [] },
-        { bookings: [] },
-        { bookings: [] },
-        { bookings: [] },
-        { bookings: [] },
-        { bookings: [] },
-        { bookings: [] },
-        { bookings: [] }
-    ])
-
-
+    const [workingTimes, setTimesToBook] = useState([])
     const [dbTimes, setDbTimes] = useState([])
     const [radioButton, setRadioButton] = useState('')
 
@@ -78,43 +67,48 @@ const Calendar = () => {
         setTreatmentString(treatment !== '' ? treatment : 'Please select a treatment');
         setDurationString(duration > 0 ? time < 3 ? `${time * 20}mins` : `${Math.floor(time / 3)}h ${time % 3 * 20 > 0 ? `${time % 3 * 20}mins` : ``}` : 'No treatment selected')
 
+
+        //Fetching timesheet data from the DB and populating workingTimes variable with it
         getBookingTimesCustom().then(data => {
-            console.log('data', data)
+            let workingTimesTemp = []
+            for (let i = 0; i < 8; i++) {
+                workingTimesTemp.push({ bookings: [] })
+            }
             for (let i = 0; i < data.length; i++) {
-                const ttbCopy = workingTimes
+
                 let day = data[i].day
                 switch (day) {
                     case "default":
-                        ttbCopy[7].bookings = data[i].bookings
-                        setTimesToBook(ttbCopy)
+                        workingTimesTemp[7].bookings = data[i].bookings
+                        setTimesToBook(workingTimesTemp)
                         break;
                     case "monday":
-                        ttbCopy[1].bookings = data[i].bookings
-                        setTimesToBook(ttbCopy)
+                        workingTimesTemp[1].bookings = data[i].bookings
+                        setTimesToBook(workingTimesTemp)
                         break;
                     case "tuesday":
-                        ttbCopy[2].bookings = data[i].bookings
-                        setTimesToBook(ttbCopy)
+                        workingTimesTemp[2].bookings = data[i].bookings
+                        setTimesToBook(workingTimesTemp)
                         break;
                     case "wednsday":
-                        ttbCopy[3].bookings = data[i].bookings
-                        setTimesToBook(ttbCopy)
+                        workingTimesTemp[3].bookings = data[i].bookings
+                        setTimesToBook(workingTimesTemp)
                         break;
                     case "thursday":
-                        ttbCopy[4].bookings = data[i].bookings
-                        setTimesToBook(ttbCopy)
+                        workingTimesTemp[4].bookings = data[i].bookings
+                        setTimesToBook(workingTimesTemp)
                         break;
                     case "friday":
-                        ttbCopy[5].bookings = data[i].bookings
-                        setTimesToBook(ttbCopy)
+                        workingTimesTemp[5].bookings = data[i].bookings
+                        setTimesToBook(workingTimesTemp)
                         break;
                     case "saturday":
-                        ttbCopy[6].bookings = data[i].bookings
-                        setTimesToBook(ttbCopy)
+                        workingTimesTemp[6].bookings = data[i].bookings
+                        setTimesToBook(workingTimesTemp)
                         break;
                     case "sunday":
-                        ttbCopy[0].bookings = data[i].bookings
-                        setTimesToBook(ttbCopy)
+                        workingTimesTemp[0].bookings = data[i].bookings
+                        setTimesToBook(workingTimesTemp)
                         break;
                     default:
                 }
