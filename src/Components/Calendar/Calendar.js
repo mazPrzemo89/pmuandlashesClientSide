@@ -7,7 +7,7 @@ import { isValidPhoneNumber } from 'react-phone-number-input'
 import stylesCalPage from './CalendarPage.module.css'
 import stylesMain from './Calendar.module.css'
 import { isAuthenticated } from '../../auth'
-import { getProductPrice, getProducts } from '../../APIs/productsApi'
+import { getProducts } from '../../APIs/productsApi'
 import { setDbMonth } from '../../APIs/calendarApi'
 import { bookingValidation, dbDateHandler, updateMonth } from './calendarMethods'
 import { getBookingTimes, bookAppointment } from '../../APIs/bookingApi'
@@ -34,7 +34,6 @@ const Calendar = () => {
     const [isAllBookes, setIsAllBooked] = useState(false)
     const [priceString, setPriceString] = useState(0)
     const [depositChecked, setCheckedDeposit] = useState(false)
-    const [fullPriceChecked, setCheckedFull] = useState(false)
     const [gridLength, setGridLength] = useState(0)
     const [durationString, setDurationString] = useState('')
     const [randomNumber, setRandomNumber] = useState(0)
@@ -42,11 +41,11 @@ const Calendar = () => {
 
     const duration = useSelector(state => state.duration)
     const treatment = useSelector(state => state.treatment)
-    const price = useSelector(state => state.price)
 
 
 
-    const [timesToBook, setTimesToBook] = useState([
+    // An array to be filled by getBookingTimesCustom API call
+    const [workingTimes, setTimesToBook] = useState([
         { bookings: [] },
         { bookings: [] },
         { bookings: [] },
@@ -56,6 +55,8 @@ const Calendar = () => {
         { bookings: [] },
         { bookings: [] }
     ])
+
+
     const [dbTimes, setDbTimes] = useState([])
     const [radioButton, setRadioButton] = useState('')
 
@@ -78,8 +79,9 @@ const Calendar = () => {
         setDurationString(duration > 0 ? time < 3 ? `${time * 20}mins` : `${Math.floor(time / 3)}h ${time % 3 * 20 > 0 ? `${time % 3 * 20}mins` : ``}` : 'No treatment selected')
 
         getBookingTimesCustom().then(data => {
+            console.log('data', data)
             for (let i = 0; i < data.length; i++) {
-                const ttbCopy = timesToBook
+                const ttbCopy = workingTimes
                 let day = data[i].day
                 switch (day) {
                     case "default":
@@ -118,9 +120,8 @@ const Calendar = () => {
                 }
             }
         })
-        setTimesToBook({ ...timesToBook, name: `${year}_${month}_${day.toString().length === 2 ? day : '0' + day}` })
+        setTimesToBook({ ...workingTimes, name: `${year}_${month}_${day.toString().length === 2 ? day : '0' + day}` })
         updateMonth(month, year, setDbMonth, assignClass, setCalData, setError)
-        console.log(timesToBook)
     }, [])
 
 
@@ -259,7 +260,7 @@ const Calendar = () => {
         let d = new Date(year, month - 1, day);
         let n = d.getDay();
 
-        times.bookings = timesToBook[n].bookings.length === 0 ? timesToBook[7].bookings : timesToBook[n].bookings
+        times.bookings = workingTimes[n].bookings.length === 0 ? workingTimes[7].bookings : workingTimes[n].bookings
         times.name = `${year}_${month}_${day.toString().length === 2 ? day : '0' + day}`
 
         getBookingTimes(times).then((timesData) => {
@@ -310,7 +311,7 @@ const Calendar = () => {
         if (year && month && day) {
             const d = new Date(year, month - 1, day);
             const n = d.getDay();
-            times.bookings = timesToBook[n].bookings.length === 0 ? timesToBook[7].bookings : timesToBook[n].bookings
+            times.bookings = workingTimes[n].bookings.length === 0 ? workingTimes[7].bookings : workingTimes[n].bookings
             times.name = `${year}_${month}_${day.toString().length === 2 ? day : '0' + day}`
             console.log(times)
             getBookingTimes(times).then(data => {
@@ -423,7 +424,7 @@ const Calendar = () => {
 
         return (
             <div className={stylesMain.centerBtnDiv} >
-                {calData.length > 0 && <button className={stylesMain.centeredButton} onClick={() => { checkBookings(); console.log(timesToBook) }} disabled={calData[day - 1].disabled === true ? true : false}>Check availability</button>}
+                {calData.length > 0 && <button className={stylesMain.centeredButton} onClick={() => { checkBookings(); console.log(workingTimes) }} disabled={calData[day - 1].disabled === true ? true : false}>Check availability</button>}
             </div>
         )
     }
@@ -509,7 +510,8 @@ const Calendar = () => {
         )
     }
 
-
+    /*Payment functionally is disabled, if you want to test it
+    you would have to set up and configure a testing account at Stripe*/
     const paymentDiv = () => {
         return (
             <div className={stylesMain.bottomDiv}>
@@ -522,13 +524,11 @@ const Calendar = () => {
                             name="price"
                             checked={depositChecked}
                             onClick={() => {
-                                fullPriceChecked === true ? setCheckedFull(false) : setCheckedDeposit(true)
+
                                 if (isValidPhoneNumber(phone)) {
-                                    getProductPrice(treatment)
-                                        .then((data) => {
-                                            setPriceString(15)
-                                            setCheckedDeposit(true)
-                                        })
+
+                                    setCheckedDeposit(true)
+
                                 } else {
                                     alert('Please provide a valid UK phone number')
                                     setCheckedDeposit(false)
@@ -596,7 +596,7 @@ const Calendar = () => {
             {userRole === 1 && adminControls()}
             {userInput()}
             <div className={stylesMain.conditionsDiv}>
-                <p className={stylesMain.conditions}>The deposit is refundable only if you cancel your booking within a 24 hour notice. Changing your booking time or date does not make your deposit refundable. The rest of the amount must be paid by cash, by continuing you agree to the conditions above.</p>
+                <p className={stylesMain.conditions}>Your message</p>
             </div>
             {paymentDiv()}
         </Layout>
