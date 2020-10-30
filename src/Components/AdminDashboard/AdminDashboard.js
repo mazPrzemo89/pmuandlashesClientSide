@@ -39,7 +39,7 @@ const AdminDashboard = () => {
         name: '',
         oldPhoto: '',
         photo: '',
-        id:'',
+        id: '',
         updateCategoryForm: ''
     })
 
@@ -120,13 +120,13 @@ const AdminDashboard = () => {
 
     const fetchCategory = () => {
         getCategory(categoryId).then((data, err) => {
-            if(err){
+            if (err) {
                 console.log(err)
             }
             updateCategoryForm.set('name', data.name)
             updateCategoryForm.set('oldPhoto', data.photo)
             updateCategoryForm.set('id', data.id)
-      
+
             setUpdateCategoryValues({
                 ...updateCategoryValues,
                 name: data.name,
@@ -299,7 +299,7 @@ const AdminDashboard = () => {
                 formField.value = 'Please select'
             }
         })
-      
+
     }
 
     const submitUpdateCategory = (event) => {
@@ -323,7 +323,7 @@ const AdminDashboard = () => {
                 let categoryField = document.getElementById('category select')
                 categoryField.value = 'Please select'
             }
- 
+
         })
     }
 
@@ -359,89 +359,88 @@ const AdminDashboard = () => {
         setUpdateCategoryValues({ ...updateCategoryValues, [name]: value })
     }
 
-    const updateCategoryFormJSX = () => ( 
+    const updateCategoryFormJSX = () => (
         <div className={styles.updateDiv}>
-        <form className={styles.formAll} onSubmit={submitUpdateCategory}>
-            <div className={styles.updateDiv}>
-                <label>
-                <input
-                    onChange={(event) => handleCategoryPhoto(event)} 
-                    type="file" name='photo'
-                    accept="image/*"
-                />
-                </label>
-            </div>
-            <p className={styles.categoryName}>Category name:</p>
-            <div className={styles.updateDiv}>
-                <input 
-                    onChange={handleCategoryName('name')} 
-                    type="text" 
-                    style={{height:'30px'}} 
-                    value={updateCategoryValues.name}
-                />
-            </div>
-            <button style={{height:'30px',width:'185px'}} >Save</button>
-            <p className={styles.promParagraph} style={{marginBottom:'20px', marginTop:'10px',borderBottom:'1px solid black'}}>Update category</p>
-        </form>
-    
+            <form className={styles.formAll} onSubmit={submitUpdateCategory}>
+                <div className={styles.updateDiv}>
+                    <label>
+                        <input
+                            onChange={(event) => handleCategoryPhoto(event)}
+                            type="file" name='photo'
+                            accept="image/*"
+                        />
+                    </label>
+                </div>
+                <p className={styles.categoryName}>Category name:</p>
+                <div className={styles.updateDiv}>
+                    <input
+                        onChange={handleCategoryName('name')}
+                        type="text"
+                        style={{ height: '30px' }}
+                        value={updateCategoryValues.name}
+                    />
+                </div>
+                <button style={{ height: '30px', width: '185px' }} >Save</button>
+                <p className={styles.promParagraph} style={{ marginBottom: '20px', marginTop: '10px', borderBottom: '1px solid black' }}>Update category</p>
+            </form>
+
         </div>)
 
     const updateProductFormJSX = () => (
-        
+
         <div className={styles.updateDiv}>
-        
-        <form onSubmit={submitUpdateProduct} className={styles.formAll}>
-            <div className={styles.updateDiv}>
-                <label className={styles.controlsSelect}>
+            <form onSubmit={submitUpdateProduct} className={styles.formAll}>
+                <div className={styles.updateDiv}>
+                    <label className={styles.controlsSelect}>
+                        <input
+                            className={styles.controlsSelect}
+                            onChange={(event) => handleUpdatePhoto(event)}
+                            type="file" name="photo"
+                            accept="image/*"
+                        />
+                    </label>
+                </div>
+                <p className={styles.updateParagraph}>Name:</p>
+                <div className={styles.updateDiv}>
                     <input
-                        className={styles.controlsSelect}
-                        onChange={(event) => handleUpdatePhoto(event)}
-                        type="file" name="photo"
-                        accept="image/*"
+
+                        onChange={handleUpdate('name')}
+                        type="text"
+                        value={updateProductValues.name}
                     />
-                </label>
-            </div>
-            <p className={styles.updateParagraph}>Name:</p>
-            <div className={styles.updateDiv}>
-                <input
 
-                    onChange={handleUpdate('name')}
-                    type="text"
-                    value={updateProductValues.name}
-                />
+                </div>
+                <p className={styles.updateParagraph}>Description:</p>
+                <div className={styles.updateDiv}>
+                    <textarea
+                        className={styles.inputField}
+                        onChange={handleUpdate('description')}
+                        type="text"
+                        value={updateProductValues.description}
+                    />
+                </div>
+                <p className={styles.updateParagraph}>Duration:</p>
+                <div className={styles.updateDiv}>
+                    <input
+                        className={styles.inputField}
+                        onChange={handleUpdate('duration')}
+                        type="number"
 
-            </div>
-            <p className={styles.updateParagraph}>Description:</p>
-            <div className={styles.updateDiv}>
-                <textarea
-                    className={styles.inputField}
-                    onChange={handleUpdate('description')}
-                    type="text"
-                    value={updateProductValues.description}
-                />
-            </div>
-            <p className={styles.updateParagraph}>Duration:</p>
-            <div className={styles.updateDiv}>
-                <input
-                    className={styles.inputField}
-                    onChange={handleUpdate('duration')}
-                    type="number"
-
-                    value={updateProductValues.duration}
-                />
-            </div>
-            <p className={styles.updateParagraph}>Price:</p>
-            <div className={styles.updateDiv}>
-                <input
-                    onChange={handleUpdate('price')}
-                    type="number"
-                    className={styles.inputField}
-                    value={updateProductValues.price}
-                />
-            </div>
-            <button>Save</button>
-            <p className={styles.promParagraph} style={{marginTop:'10px',borderBottom:'1px solid black'}}>Update product</p>
-        </form></div>)
+                        value={updateProductValues.duration}
+                    />
+                </div>
+                <p className={styles.updateParagraph}>Price:</p>
+                <div className={styles.updateDiv}>
+                    <input
+                        onChange={handleUpdate('price')}
+                        type="number"
+                        className={styles.inputField}
+                        value={updateProductValues.price}
+                    />
+                </div>
+                <button>Save</button>
+                <p className={styles.promParagraph} style={{ marginTop: '10px', borderBottom: '1px solid black' }}>Update product</p>
+            </form></div>)
 
 
     const photoForm = () => (
@@ -522,9 +521,12 @@ const AdminDashboard = () => {
     const deleteCategoryComponent = () => (
         <div className={styles.controlsElement}>
             <label className={styles.promParagraph}>Category delete/update</label>
-            <select id={'category select'} className={styles.controlsSelect} onChange={(event) =>{setCategoryId(event.target.value);if(showUpdateCategoryFrom){
-                setShowUpdateCategoryForm(false)
-            }}}>
+            <select id={'category select'} className={styles.controlsSelect} onChange={(event) => {
+                console.log(event.target.value)
+                setCategoryId(event.target.value); if (showUpdateCategoryFrom) {
+                    setShowUpdateCategoryForm(false)
+                }
+            }}>
                 <option value={''}>Please select</option >
                 {categories &&
                     categories.map((c, i) => (
@@ -534,25 +536,28 @@ const AdminDashboard = () => {
                     ))}
             </select>
             <button disabled={!categoryId ? true : false} className={styles.controlsButton} onClick={() => { hnadleDeleteCayegory(categoryId) }}>Delete</button>
-            <button disabled={(showUpdateCategoryFrom ? true : false)||(!categoryId? true : false)} className={styles.controlsButton} onClick={() => { fetchCategory(categoryId) }}>Update</button>
+            <button disabled={(showUpdateCategoryFrom ? true : false) || (!categoryId ? true : false)} className={styles.controlsButton} onClick={() => { fetchCategory(categoryId) }}>Update</button>
         </div>)
 
     const deleteProductComponent = () => (
         <div className={styles.controlsElement} style={{ marginTop: '20px' }}>
             <label className={styles.promParagraph} >Product delete/update</label>
-            <select id={'product select'} className={styles.controlsSelect} onChange={(event) => { setProductId(event.target.value); if(showUpdateFrom){
-                setShowUpdateForm(false)
-            } }}>
+            <select id={'product select'} className={styles.controlsSelect} onChange={(event) => {
+                console.log(event.target.value)
+                setProductId(event.target.value); if (showUpdateFrom) {
+                    setShowUpdateForm(false)
+                }
+            }}>
                 <option value={''}>Please select</option >
                 {products &&
-                    products.map((c, i) => (
-                        <option key={i} value={c._id}>
-                            {c.name}
+                    products.map((p, i) => (
+                        <option key={i} value={p._id}>
+                            {p.name}
                         </option >
                     ))}
             </select>
             <button disabled={!productId ? true : false} className={styles.controlsButton} onClick={() => { hnadleDeleteProduct(productId) }}>Delete</button>
-            <button disabled={(showUpdateFrom ? true : false)||(!productId? true : false)} className={styles.controlsButton} onClick={() => { fetchProduct(productId) }}>Update</button>
+            <button disabled={(showUpdateFrom ? true : false) || (!productId ? true : false)} className={styles.controlsButton} onClick={() => { fetchProduct(productId) }}>Update</button>
         </div>)
 
     const promotionsComponent = () => {
