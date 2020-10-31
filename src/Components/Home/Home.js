@@ -14,7 +14,6 @@ function Home() {
 
     const [categories, setCategories] = useState(false)
     const [promotions, setPromotions] = useState(false)
-    const [showShareButtons, setShareButtons] = useState(false)
     const [error, setError] = useState(false)
 
 
@@ -47,10 +46,6 @@ function Home() {
 
 
 
-    function showPopup(url) {
-        window.open(url, 'name', 'height=190,width=520,top=200,left=300,resizable');
-
-    }
 
     useEffect(() => {
         loadCategories()
@@ -65,6 +60,7 @@ function Home() {
                 {categories && categories.map((category, i) => (
                     <Category key={i} category={category}>{category.name}</Category>
                 ))}
+                <div className={styles.pusherDiv}></div>
             </div>
         )
     }

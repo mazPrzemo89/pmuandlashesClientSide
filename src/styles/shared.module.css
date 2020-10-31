@@ -39,6 +39,11 @@ h2 {
     justify-content: space-evenly;    
 }
 
+.pusherDiv {
+    width: 200px;
+    min-height: 2vh;
+}
+
 .logo_menu {
     width: 165px;
     height: 100px;
