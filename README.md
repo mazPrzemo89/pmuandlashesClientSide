@@ -1,5 +1,6 @@
 # pmuandlashesClientSide
 This scheduling application was written for a professional beautician. It's highly personalised, as it gives the admin full flexibility in creating categories, services and setting up their own working schedule. The working schedule allows the admin to adjust their full availability, by selecting days of the week they want to work, hours, default for every day or custom for any given day if necessary. Holidays and breaks are also a feature included in this app.
+To create an admin account you have to signup via /signup route and then change role in your database manually form 0 to 1, it's described in the server side readme as well.
 
 # Containers and Components
 
