@@ -10,7 +10,7 @@
 .bookedTimesGrid {
     display: grid;
     width: 24rem;
-    height: 100%;
+    min-height: 20vh;
     grid-template-columns: repeat(1, 24rem);
     margin-top: 1rem ;
     margin-left: auto;

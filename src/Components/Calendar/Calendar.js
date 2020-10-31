@@ -418,7 +418,7 @@ const Calendar = () => {
 
         return (
             <div className={stylesMain.centerBtnDiv} >
-                {calData.length > 0 && <button className={stylesMain.centeredButton} onClick={() => { checkBookings(); console.log(workingTimes) }} disabled={calData[day - 1].disabled === true ? true : false}>Check availability</button>}
+                {calData.length > 0 && <button className={stylesMain.centeredButton} onClick={() => { checkBookings(); console.log(workingTimes) }} disabled={calData[day - 1] && calData[day - 1].disabled === true ? true : false}>Check availability</button>}
             </div>
         )
     }
