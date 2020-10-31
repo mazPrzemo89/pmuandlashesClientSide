@@ -1,3 +1,5 @@
+
+
 * {
     box-sizing: border-box;
 }
@@ -26,6 +28,7 @@ h2 {
 .gridCards {
     display: grid;
     width: 100%;
+    min-height: 600px;
     margin-top:100px;
     grid-template-columns: repeat(1, 300px);
     justify-content: space-evenly;    
@@ -41,7 +44,7 @@ h2 {
 
 .pusherDiv {
     width: 200px;
-    min-height: 2vh;
+    min-height: 8vh;
 }
 
 .logo_menu {
@@ -141,13 +144,13 @@ h2 {
 
 @media (min-width: 769px)  {
     
-    .gridCards {
+    /* .gridCards {
         display: grid;
         width: 100%;
         margin-top:150px;
-        grid-template-columns: repeat(3, 300px);
+        grid-template-columns: repeat(2, 300px);
         justify-content: space-evenly;    
-    }
+    } */
 
    
 }

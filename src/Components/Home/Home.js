@@ -56,12 +56,11 @@ function Home() {
 
     const categoriesJSX = () => {
         return (
-            <div className={styles.gridCards} style={promotions.length > 0 ? { marginTop: '30px' } : { marginTop: '0px' }}>
-                {categories && categories.map((category, i) => (
+            <div className={styles.gridCards} style={promotions.length > 0 ? { marginTop: '30px' } : { marginTop: '0px' }, window.innerWidth > 784 ? { gridTemplateColumns: `repeat(${categories.length},300px)` } : { gridTemplateColumns: `repeat(1,300px)` }}>
+                { categories && categories.map((category, i) => (
                     <Category key={i} category={category}>{category.name}</Category>
                 ))}
-                <div className={styles.pusherDiv}></div>
-            </div>
+            </div >
         )
     }
 
@@ -87,6 +86,7 @@ function Home() {
         {promotions ? promotionMessage() : separator()}
         {!categories && <Spinner />}
         {categoriesJSX()}
+        <div className={styles.pusherDiv}></div>
     </Layout>
     )
 }
