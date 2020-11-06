@@ -36,8 +36,8 @@
 
 .imgZoomContainer {
     display: flex;
-    width: 1400px;
-    height:900px;
+    min-width: 100vh;
+    min-height: 100vh;
     margin-top:70px;
     
 }
