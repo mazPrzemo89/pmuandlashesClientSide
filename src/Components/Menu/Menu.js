@@ -69,7 +69,7 @@ const Menu = ({ history }) => {
                     {isAuthenticated() && isAuthenticated().user.role === 1 && (
                         <div className={isAdmin ? stylesMenu.menuAdmin : undefined}>
                             <Link style={isActive(history, '/times')} to="/times">
-                                <p className={stylesMenu.para}>Time sheet</p>
+                                <p className={stylesMenu.para}>Timesheet</p>
                             </Link>
                             <div className={!isAdmin ? stylesMenu.bottom : ''}></div>
                         </div>
