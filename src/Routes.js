@@ -3,9 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Signup from './Components/Signup/Signup'
 import Signin from './Components/Signin/Signin'
 import Home from './Components/Home/Home'
-import PrivateRoute from './auth/PrivateRoute'
 import AdminRoute from './auth/AdminRoute'
-import Dashboard from "./Components/UserDashboard/UserDashboard";
 import AdminDashboard from "./Components/AdminDashboard/AdminDashboard";
 import ManageBookings from "./Components/ManageBookings/ManageBookings";
 import AddCategory from "./Components/Category&Product/Category/AddCategory";
@@ -33,7 +31,6 @@ const Routes = () => {
                 <Route path="/calendar" exact component={Calendar} />
                 <Route path="/products" exact component={Products} />
                 <Route path="/success" exact component={Success} />
-                <PrivateRoute path="/user/dashboard" exact component={Dashboard} />
                 <AdminRoute path="/times" exact component={TimeSheet} />
                 <AdminRoute path="/admin/bookings" exact component={ManageBookings} />
                 <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />

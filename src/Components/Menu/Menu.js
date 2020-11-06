@@ -74,14 +74,6 @@ const Menu = ({ history }) => {
                             <div className={!isAdmin ? stylesMenu.bottom : ''}></div>
                         </div>
                     )}
-                    {isAuthenticated() && (
-                        <div className={isAdmin ? stylesMenu.menuAdmin : undefined}>
-                            <span style={{ cursor: 'pointer', color: 'black' }} onClick={() => signout(() => { history.push('/') })}>
-                                <p className={stylesMenu.para}>Signout</p>
-                            </span>
-                            <div className={!isAdmin ? stylesMenu.bottom : ''}></div>
-                        </div>
-                    )}
                     {isAuthenticated() && isAuthenticated().user.role === 1 && (
                         <div className={isAdmin ? stylesMenu.menuAdmin : undefined}>
                             <Link style={isActive(history, '/calendar')} to="/calendar">
@@ -113,12 +105,21 @@ const Menu = ({ history }) => {
                         </Link>
                         <div className={!isAdmin ? stylesMenu.bottom : ''}></div>
                     </div>
-                    <div className={isAdmin ? stylesMenu.menuAdmin : undefined}>
+                    {!isAuthenticated() && <div className={isAdmin ? stylesMenu.menuAdmin : undefined}>
                         <Link style={isActive(history, '/signup')} to="/signup">
                             <p className={stylesMenu.para}>Signup</p>
                         </Link>
                         <div className={!isAdmin ? stylesMenu.bottom : ''}></div>
-                    </div>
+                    </div>}
+
+                    {isAuthenticated() && (
+                        <div className={isAdmin ? stylesMenu.menuAdmin : undefined}>
+                            <span style={{ cursor: 'pointer', color: 'black' }} onClick={() => signout(() => { history.push('/') })}>
+                                <p className={stylesMenu.para}>Signout</p>
+                            </span>
+                            <div className={!isAdmin ? stylesMenu.bottom : ''}></div>
+                        </div>
+                    )}
                 </ul>
             </SideDrawer>
 
