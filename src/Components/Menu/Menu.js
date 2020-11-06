@@ -5,7 +5,6 @@ import Hamburger from '../Utils/DrawerToggle/DrawerToggle'
 import SideDrawer from '../Utils/SideDrawer/SideDrawer'
 import { signout, isAuthenticated } from '../../auth'
 import stylesMenu from '../../styles/shared.module.css'
-import styles from './Menu.module.css'
 
 
 const isActive = (history, path) => {
