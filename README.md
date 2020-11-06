@@ -6,12 +6,10 @@ To create an admin account you have to signup via /signup route and then change 
 
 ## Admin Dashboard
 
-After following the steps included in pmuandlashesServerSide README file you should have an admin account set.
-Logging in as admin will show you more options in the menu. The menu button is located in the upper left corner.
-Clicking on Dashboard will take you to the admin dashboard where you can create Categories, Products, Promotions and post certificates 
-as well as remove them. When your categories and products are ready you can move to Time Sheet page.
+In admin dashboard you can create Categories, Products, Promotions and post certificates 
+as well as remove them. When your categories and products are ready you can move to Timesheet page and adjust your timesheet.
 
-## Time Sheet
+## Timesheet
 
 On the time sheet page you will see a set button for each day of the week "ON" or "OFF" will be highlighted depending on what you choose.
 Under that section you can Delete working times sheet or Create a new one. Default option in "Set working hours timesheet" will apply to every working day unless you create a custom one.
