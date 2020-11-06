@@ -106,17 +106,18 @@ const Menu = ({ history }) => {
                         <div className={!isAdmin ? stylesMenu.bottom : ''}></div>
                     </div>
                     {!isAuthenticated() && <div className={isAdmin ? stylesMenu.menuAdmin : undefined}>
+                        <Link style={isActive(history, '/signin')} to="/signin">
+                            <p className={stylesMenu.para}>Sign in</p>
+                        </Link>
+                        <div className={!isAdmin ? stylesMenu.bottom : ''}></div>
+                    </div>}
+                    {!isAuthenticated() && <div className={isAdmin ? stylesMenu.menuAdmin : undefined}>
                         <Link style={isActive(history, '/signup')} to="/signup">
                             <p className={stylesMenu.para}>Signup</p>
                         </Link>
                         <div className={!isAdmin ? stylesMenu.bottom : ''}></div>
                     </div>}
-                    {!isAuthenticated() && <div className={isAdmin ? stylesMenu.menuAdmin : undefined}>
-                        <Link style={isActive(history, '/signin')} to="/signin">
-                            <p className={stylesMenu.para}>Signin</p>
-                        </Link>
-                        <div className={!isAdmin ? stylesMenu.bottom : ''}></div>
-                    </div>}
+
 
                     {isAuthenticated() && (
                         <div className={isAdmin ? stylesMenu.menuAdmin : undefined}>
