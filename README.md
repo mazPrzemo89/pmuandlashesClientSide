@@ -44,7 +44,7 @@ Qualification page is intended to display cerfificates previously posted by the 
 
 Before creating a production build you will have to adjust the API's so the server can serve the files from build directory correctly.
 You can find them in ``` src/APIs ``` and ``` src/auth ``` directories.
-You will have to remove the appended ``` ${API} ``` variable form the path in every fetch call. See the example below.
+You will have to remove the appended ``` ${API} ``` variable form the path in every fetch call. See the example below. Or alternatively set the react env variable to empty string, after doing so you can omit the steps below.
 
 ### Development
 
